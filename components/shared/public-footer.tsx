@@ -10,7 +10,7 @@ export function PublicFooter() {
                 <span className='text-white font-black text-xl italic'>P</span>
               </div>
               <h1 className='text-2xl font-extrabold text-white tracking-tight'>
-                PATHFINDER
+                Insight Edu
               </h1>
             </div>
             <p className='text-slate-500 font-medium mb-8 leading-relaxed'>

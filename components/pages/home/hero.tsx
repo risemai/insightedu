@@ -20,7 +20,7 @@ export function HeroContent() {
             </div>
             <h1 className='text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-8'>
               Discover, Create, Share Your Academic{' '}
-              <span className='text-blue-500'>Home</span> At Pathfinder
+              <span className='text-blue-500'>Home</span> At Insight Edu
             </h1>
             <p className='text-slate-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium'>
               Empowering the next generation of researchers with world-class

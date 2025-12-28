@@ -13,7 +13,7 @@ export function SuccessStories() {
         </h2>
         <p className='text-slate-500 mt-4 max-w-2xl mx-auto font-medium'>
           Join thousands of successful researchers who have accelerated their
-          careers with Pathfinder.
+          careers with Insight Edu.
         </p>
       </div>
 

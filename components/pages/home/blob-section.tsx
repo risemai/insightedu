@@ -1,72 +1,76 @@
+import {
+  BookAudio,
+  BookOpen,
+  ClipboardMinus,
+  GraduationCap,
+  NotebookPen,
+  PenTool,
+  Presentation,
+  Users,
+} from 'lucide-react';
+
 export function BlobSection() {
   const cards = [
     {
-      title: '24hr Expert Support',
+      title: 'Indexed Journal Paper Publication',
       description:
-        'Get real-time answers to your research roadblocks from our global experts.',
-      icon: (
-        <svg
-          className='w-8 h-8 text-blue-600'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'
-          />
-        </svg>
-      ),
+        'Get your research published in Scopus, SCI, or other indexed journals with expert guidance.',
+      icon: <BookOpen className='w-7 h-7 text-blue-500' />,
       bgColor: 'bg-blue-50',
     },
     {
-      title: 'Skill Development',
+      title: 'Abstract & Proposal Writing',
       description:
-        'Industry-standard modules tailored for high-impact publication success.',
-      icon: (
-        <svg
-          className='w-8 h-8 text-purple-600'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M13 10V3L4 14h7v7l9-11h-7z'
-          />
-        </svg>
-      ),
+        'Compelling abstracts and proposals that capture attention and secure approvals.',
+      icon: <ClipboardMinus className='w-7 h-7 text-purple-500' />,
       bgColor: 'bg-purple-50',
     },
     {
-      title: 'Research Resources',
+      title: 'Conference Paper Writing',
       description:
-        'Exclusive access to paper templates, datasets, and citation libraries.',
-      icon: (
-        <svg
-          className='w-8 h-8 text-emerald-600'
-          fill='none'
-          stroke='currentColor'
-          viewBox='0 0 24 24'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-            d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-          />
-        </svg>
-      ),
+        'Professional conference papers that meet international standards and guidelines.',
+      icon: <Presentation className='w-7 h-7 text-emerald-500' />,
       bgColor: 'bg-emerald-50',
+    },
+    {
+      title: 'Thesis Paper Writing',
+      description:
+        'Comprehensive thesis support from research design to final submission.',
+      icon: <GraduationCap className='w-7 h-7 text-indigo-500' />,
+      bgColor: 'bg-indigo-50',
+    },
+    {
+      title: 'Proof Reading & Editing',
+      description:
+        'Meticulous editing and proofreading to enhance clarity and eliminate errors.',
+      icon: <PenTool className='w-7 h-7 text-fuchsia-500' />,
+      bgColor: 'bg-fuchsia-50',
+    },
+    {
+      title: 'Assignment Writing',
+      description:
+        'High-quality assignments tailored to your course requirements and standards.',
+      icon: <NotebookPen className='w-7 h-7 text-teal-500' />,
+      bgColor: 'bg-teal-50',
+    },
+    {
+      title: 'Research Paper Writing',
+      description:
+        'Original research papers with rigorous methodology and academic integrity.',
+      icon: <BookAudio className='w-7 h-7 text-rose-500' />,
+      bgColor: 'bg-rose-50',
+    },
+    {
+      title: 'Authorship Positions',
+      description:
+        'Secure co-authorship opportunities in reputable academic publications.',
+      icon: <Users className='w-7 h-7 text-violet-500' />,
+      bgColor: 'bg-violet-50',
     },
   ];
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
       {cards.map((card, idx) => (
         <div
           key={idx}

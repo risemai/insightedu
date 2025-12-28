@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     title: 'Insight Edu — Learn, Grow, Succeed',
     description:
       'Insight Edu provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
-    url: 'https://insight-edu.com',
+    url: 'https://insightedu.cloud',
     images: [
       {
-        url: 'https://insight-edu.com/assets/img/og.jpg',
+        url: 'https://insightedu.cloud/assets/img/og.jpg',
         width: 1200,
         height: 630,
         alt: 'Insight Edu — Learn, Grow, Succeed',
@@ -49,22 +49,22 @@ export const metadata: Metadata = {
     title: 'Insight Edu — Learn, Grow, Succeed',
     description:
       'Insight Edu provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
-    images: ['https://insight-edu.com/assets/img/og.jpg'],
+    images: ['https://insightedu.cloud/assets/img/og.jpg'],
   },
-  metadataBase: new URL('https://insight-edu.com'),
+  metadataBase: new URL('https://insightedu.cloud'),
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Insight Edu',
-  url: 'https://insight-edu.com',
+  url: 'https://insightedu.cloud',
   publisher: {
     '@type': 'Organization',
     name: 'Insight Edu',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://insight-edu.com/assets/img/logo.png',
+      url: 'https://insightedu.cloud/insight-edu-logo.svg',
     },
   },
   sameAs: [
@@ -76,19 +76,19 @@ const jsonLd = {
   hasPart: [
     {
       '@type': 'WebPage',
-      url: 'https://insight-edu.com/courses',
+      url: 'https://insightedu.cloud/courses',
       name: 'Courses',
       position: 1,
     },
     {
       '@type': 'WebPage',
-      url: 'https://insight-edu.com/about',
+      url: 'https://insightedu.cloud/about',
       name: 'About',
       position: 2,
     },
     {
       '@type': 'WebPage',
-      url: 'https://insight-edu.com/contact',
+      url: 'https://insightedu.cloud/contact',
       name: 'Contact',
       position: 3,
     },
