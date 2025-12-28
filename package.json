@@ -16,6 +16,7 @@
     "next": "16.1.0-canary.19",
     "react": "19.2.2",
     "react-dom": "19.2.2",
+    "react-fast-marquee": "^1.6.5",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
