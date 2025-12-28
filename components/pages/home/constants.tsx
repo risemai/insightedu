@@ -9,11 +9,13 @@ export const FEATURED_COURSE: Course = {
   description:
     'Personal Development Skills for Researcher. Master the art of academic writing, methodology design, and publication strategies.',
   image: 'https://picsum.photos/seed/path1/800/500',
+  slug: 'research-learning-professional-development',
   modules: 12,
   hours: 45,
   quizzes: 8,
   assignments: 5,
   sessions: 15,
+  isFeatured: true,
 };
 
 export const TESTIMONIALS: Testimonial[] = [

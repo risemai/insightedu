@@ -1,3 +1,35 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '../ui/navigation-menu';
+
+const socialLinks = [
+  { name: 'Facebook', href: '#', icon: '/assets/icon/facebook-icon.svg' },
+  { name: 'LinkedIn', href: '#', icon: '/assets/icon/linkedin-icon.svg' },
+];
+
+const quickLink = [
+  {
+    label: 'Courses',
+    href: '#',
+    subMenu: [
+      { label: 'Research Methodology', href: '#' },
+      { label: 'Academic Writing', href: '#' },
+      { label: 'Data Analysis', href: '#' },
+    ],
+  },
+  { label: 'About Us', href: '/about' },
+  { label: 'Research', href: '/research' },
+  { label: 'Publications', href: '/publications' },
+  { label: 'Contact Us', href: '/contact' },
+];
+
 export function PublicFooter() {
   return (
     <footer className='bg-slate-950 pt-20 pb-10 text-slate-400'>
@@ -5,29 +37,34 @@ export function PublicFooter() {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20'>
           {/* Brand */}
           <div className='col-span-1 lg:col-span-1'>
-            <div className='flex items-center mb-6'>
-              <div className='w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3'>
-                <span className='text-white font-black text-xl italic'>P</span>
-              </div>
-              <h1 className='text-2xl font-extrabold text-white tracking-tight'>
-                Insight Edu
-              </h1>
-            </div>
+            <Link href='/'>
+              <Image
+                src='/insight-edu-logo.png'
+                width={150}
+                height={47}
+                alt='Insight Edu Logo'
+              />
+            </Link>
             <p className='text-slate-500 font-medium mb-8 leading-relaxed'>
               Bangladesh’s Largest Online Learning and Research Skill
               Development Platform. Empowering thousands of researchers
               worldwide.
             </p>
             <div className='flex space-x-4'>
-              {['facebook', 'twitter', 'linkedin', 'instagram'].map((s) => (
-                <a
-                  key={s}
-                  href='#'
-                  className='w-10 h-10 rounded-full border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all'
+              {socialLinks.map((s) => (
+                <Link
+                  key={s.name}
+                  href={s.href}
+                  className='w-10 h-10 rounded-full border border-slate-800 flex items-center justify-center bg-white hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all'
                 >
-                  <span className='sr-only'>{s}</span>
-                  <div className='w-5 h-5 bg-current opacity-20 rounded-sm'></div>
-                </a>
+                  <span className='sr-only'>{s.name}</span>
+                  <Image
+                    src={s.icon}
+                    width={20}
+                    height={20}
+                    alt={`${s.name} Icon`}
+                  />
+                </Link>
               ))}
             </div>
           </div>
@@ -38,31 +75,47 @@ export function PublicFooter() {
               Quick Links
             </h4>
             <ul className='space-y-4 font-bold'>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  Courses
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  Research Solutions
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  Expert Mentors
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  Success Stories
-                </a>
-              </li>
+              {quickLink.map((link) => {
+                if (link.subMenu) {
+                  return (
+                    <NavigationMenu key={link.label}>
+                      <NavigationMenuList>
+                        <NavigationMenuItem>
+                          <NavigationMenuTrigger
+                            className='cursor-pointer hover:text-blue-500 transition-colors p-0 font-bold 
+                          text-base  bg-transparent hover:bg-transparent focus:bg-transparent 
+                        data-[state=open]:hover:bg-transparent
+                        data-[state=open]:text-blue-500
+                        data-[state=open]:focus:bg-transparent data-[state=open]:bg-transparent 
+                         data-[state=open]:hover:text-blue-500 data-[state=open]:focus:text-blue-500
+                         focus:text-blue-500'
+                          >
+                            {link.label}
+                          </NavigationMenuTrigger>
+                          <NavigationMenuContent className='min-w-40'>
+                            {link.subMenu.map((subItem) => (
+                              <NavigationMenuLink key={subItem.href}>
+                                <Link href={subItem.href}>{subItem.label}</Link>
+                              </NavigationMenuLink>
+                            ))}
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                      </NavigationMenuList>
+                    </NavigationMenu>
+                  );
+                } else {
+                  return (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className='hover:text-blue-500 transition-colors'
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                }
+              })}
             </ul>
           </div>
 
@@ -73,29 +126,28 @@ export function PublicFooter() {
             </h4>
             <ul className='space-y-4 font-bold'>
               <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
-                  Paper Templates
-                </a>
-              </li>
-              <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
+                <Link
+                  href='#'
+                  className='hover:text-blue-500 transition-colors'
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
+                <Link
+                  href='#'
+                  className='hover:text-blue-500 transition-colors'
+                >
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='#' className='hover:text-blue-500 transition-colors'>
+                <Link
+                  href='#'
+                  className='hover:text-blue-500 transition-colors'
+                >
                   Support Center
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

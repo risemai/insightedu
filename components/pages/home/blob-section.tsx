@@ -70,25 +70,28 @@ export function BlobSection() {
   ];
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
-      {cards.map((card, idx) => (
-        <div
-          key={idx}
-          className='bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 hover:-translate-y-2 transition-all duration-300'
-        >
+    <div className='container mx-auto px-4 -mt-20 relative z-10'>
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
+        {cards.map((card, idx) => (
           <div
-            className={`${card.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-6`}
+            key={idx}
+            className='bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 
+            hover:-translate-y-2 transition-all duration-300'
           >
-            {card.icon}
+            <div
+              className={`${card.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mb-6`}
+            >
+              {card.icon}
+            </div>
+            <h3 className='text-xl font-semibold text-slate-900 mb-3'>
+              {card.title}
+            </h3>
+            <p className='text-slate-500 leading-relaxed font-medium'>
+              {card.description}
+            </p>
           </div>
-          <h3 className='text-xl font-bold text-slate-900 mb-3'>
-            {card.title}
-          </h3>
-          <p className='text-slate-500 leading-relaxed font-medium'>
-            {card.description}
-          </p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "res-001",
+    "title": "Research Learning & Professional Development",
+    "instructor": "Insight Edu Editor In Research",
+    "originalPrice": 31600,
+    "currentPrice": 16500,
+    "description": "Personal Development Skills for Researcher. Master the art of academic writing, methodology design, and publication strategies.",
+    "image": "https://images.pexels.com/photos/5185082/pexels-photo-5185082.jpeg",
+    "slug": "research-learning-professional-development",
+    "modules": 12,
+    "hours": 45,
+    "quizzes": 8,
+    "assignments": 5,
+    "sessions": 15,
+    "isFeatured": true
+  }
+]

@@ -1,6 +1,7 @@
 export interface Course {
   id: string;
   title: string;
+  slug: string;
   instructor: string;
   originalPrice: number;
   currentPrice: number;
@@ -11,6 +12,7 @@ export interface Course {
   quizzes: number;
   assignments: number;
   sessions: number;
+  isFeatured: boolean;
 }
 
 export interface Testimonial {

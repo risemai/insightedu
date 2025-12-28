@@ -3,22 +3,20 @@ export function HeroContent() {
     <section className='lg:pt-20 pb-40  lg:pb-52 px-4 bg-gray-50'>
       <div className='container mx-auto'>
         <div className='relative rounded-[2.5rem] overflow-hidden bg-slate-900 min-h-125 flex items-center justify-center p-8 md:p-16'>
-          {/* Background Image with Overlay */}
           <div
             className='absolute inset-0 z-0 opacity-50 mix-blend-overlay'
             style={{
-              backgroundImage: `url('./assets/img/insight-edu-01.jpg')`,
+              backgroundImage: `url('/assets/img/insight-edu-01.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
           ></div>
 
-          {/* Content */}
           <div className='relative z-10 text-center max-w-4xl mx-auto'>
             <div className='inline-block px-4 py-1.5 bg-blue-600/20 backdrop-blur-md rounded-full text-blue-400 font-bold text-xs uppercase tracking-widest mb-6 border border-blue-500/30'>
               Bangladesh&apos;s Largest Research Hub
             </div>
-            <h1 className='text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-8'>
+            <h1 className='text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8'>
               Discover, Create, Share Your Academic{' '}
               <span className='text-blue-500'>Home</span> At Insight Edu
             </h1>

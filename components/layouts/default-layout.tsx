@@ -1,11 +1,17 @@
+'use client';
+
+import { QueryClientProvider } from '@tanstack/react-query';
 import { PublicFooter, PublicNavbar } from '../shared';
+import { getQueryClient } from '@/lib/react-query';
+
+const queryClient = getQueryClient();
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className='min-h-screen bg-gray-50 overflow-x-hidden'>
+    <QueryClientProvider client={queryClient}>
       <PublicNavbar />
-      <main className='mt-20'>{children}</main>
+      <main className='mt-16'>{children}</main>
       <PublicFooter />
-    </div>
+    </QueryClientProvider>
   );
 }

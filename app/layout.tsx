@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Google_Sans_Flex } from 'next/font/google';
 import './globals.css';
 import { DefaultLayout } from '@/components/layouts';
 
-const plus_jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
+const google_saans = Google_Sans_Flex({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Insight Edu — Learn, Grow, Succeed',
@@ -108,7 +111,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${plus_jakarta.className} antialiased`}>
+      <body
+        className={`${google_saans.className} antialiased min-h-screen bg-gray-50 overflow-x-hidden`}
+      >
         <DefaultLayout>{children}</DefaultLayout>
       </body>
     </html>
