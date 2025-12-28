@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Google_Sans_Flex } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { DefaultLayout } from '@/components/layouts';
 
-const google_saans = Google_Sans_Flex({
+const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -112,7 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${google_saans.className} antialiased min-h-screen bg-gray-50 overflow-x-hidden`}
+        className={`${plus_jakarta_sans.className} antialiased min-h-screen bg-gray-50 overflow-x-hidden`}
       >
         <DefaultLayout>{children}</DefaultLayout>
       </body>
