@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function StatsSection() {
   return (
     <section className='py-24 bg-slate-950 relative overflow-hidden'>
@@ -26,12 +28,12 @@ export function StatsSection() {
               academic theory and practical publication excellence.
             </p>
             <div className='flex flex-wrap gap-4'>
-              <button className='bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-500 transition-all'>
+              <Link
+                href='/about'
+                className='bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-500 transition-all'
+              >
                 Learn Our History
-              </button>
-              <button className='border border-slate-700 text-white px-8 py-4 rounded-2xl font-bold hover:bg-slate-800 transition-all'>
-                Our Services
-              </button>
+              </Link>
             </div>
           </div>
 

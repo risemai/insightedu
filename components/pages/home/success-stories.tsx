@@ -1,9 +1,9 @@
 'use client';
 
-import Marquee from 'react-fast-marquee';
-import { useSuccessStories } from '@/hooks/successStories';
-import { SuccessStoriesSkeleton } from '@/components/skeletons';
 import Image from 'next/image';
+import Marquee from 'react-fast-marquee';
+import { SuccessStoriesSkeleton } from '@/components/skeletons';
+import { useSuccessStories } from '@/hooks';
 
 export function SuccessStories() {
   const { data, isLoading } = useSuccessStories();

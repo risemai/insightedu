@@ -1,4 +1,5 @@
 import type { Course, Testimonial, TeamMember } from './course.types';
-import type { successStoriesType } from './successStories';
+import type { successStoriesType } from './successStories.type';
+import type { MentorType } from './mentor.type';
 
-export { Course, Testimonial, TeamMember, successStoriesType };
+export { Course, Testimonial, TeamMember, successStoriesType, MentorType };

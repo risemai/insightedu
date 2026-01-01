@@ -80,7 +80,7 @@ export function CourseEnrollForm({
     : 0;
 
   return (
-    <div className='space-y-6'>
+    <div className='space-y-6 pb-2'>
       {/* Course Details Card */}
       <div className='bg-linear-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100'>
         <h3 className='text-lg font-bold text-slate-900 mb-4'>
@@ -213,7 +213,11 @@ export function CourseEnrollForm({
             </div>
           )}
 
-          <Button type='submit' className='w-full' disabled={isPending}>
+          <Button
+            type='submit'
+            className='w-full bg-blue-600 text-white px-8 py-6 rounded-lg font-bold hover:bg-blue-500 transition-all'
+            disabled={isPending}
+          >
             {isPending ? 'Submitting...' : 'Submit Enrollment Request'}
           </Button>
         </form>
