@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { TEAM_MEMBERS } from '../home/constants';
 
 export function AboutContent() {
   return (
@@ -148,7 +147,7 @@ export function AboutContent() {
             </p>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-            {TEAM_MEMBERS.slice(0, 2).map((member) => (
+            {/* {TEAM_MEMBERS.slice(0, 2).map((member) => (
               <div
                 key={member.id}
                 className='flex flex-col sm:flex-row bg-gray-50 rounded-[3rem] overflow-hidden border border-gray-100 p-8 gap-8 items-center sm:items-stretch'
@@ -182,7 +181,7 @@ export function AboutContent() {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </section>

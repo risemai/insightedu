@@ -1,5 +1,3 @@
-import { TEAM_MEMBERS } from './constants';
-
 export function TeamSection() {
   return (
     <section className='py-24 bg-white'>
@@ -17,7 +15,7 @@ export function TeamSection() {
         </div>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
-          {TEAM_MEMBERS.map((member) => (
+          {/* {TEAM_MEMBERS.map((member) => (
             <div key={member.id} className='group'>
               <div className='relative rounded-[2rem] overflow-hidden mb-6 aspect-square shadow-lg'>
                 <img
@@ -27,7 +25,7 @@ export function TeamSection() {
                 />
                 <div className='absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors'></div>
 
-                {/* Social icons on hover */}
+        
                 <div className='absolute bottom-6 left-0 right-0 flex justify-center space-x-3 translate-y-20 group-hover:translate-y-0 transition-transform duration-500'>
                   {['fb', 'ln', 'tw'].map((s) => (
                     <div
@@ -53,7 +51,7 @@ export function TeamSection() {
                 </p>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

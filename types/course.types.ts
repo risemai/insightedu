@@ -2,17 +2,22 @@ export interface Course {
   id: string;
   title: string;
   slug: string;
-  instructor: string;
+  instructors: string[];
   originalPrice: number;
   currentPrice: number;
   description: string;
   image: string;
-  modules: number;
+  modules: string[];
   hours: number;
   quizzes: number;
   assignments: number;
   sessions: number;
   isFeatured: boolean;
+  rating: number;
+  enrolled: number;
+  learningOutcomes: string[] | null;
+  courseFeatures: string[] | null;
+  totalReviews: number | null;
 }
 
 export interface Testimonial {

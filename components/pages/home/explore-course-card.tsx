@@ -2,9 +2,54 @@
 
 import { useCourses } from '@/hooks';
 import Link from 'next/link';
+import { FeaturedCourseCardSkeleton } from '@/components/skeletons/featured-course-card-skeleton';
+import Image from 'next/image';
 
 export function ExploreCourseCard() {
-  const { data: courses } = useCourses();
+  const { data: courses, isLoading } = useCourses();
+
+  if (isLoading) {
+    return (
+      <section className='py-20 bg-white'>
+        <div className='container mx-auto px-4 text-center mb-12'>
+          <h2 className='text-3xl md:text-4xl font-bold text-slate-900'>
+            Explore Our Featured Course
+          </h2>
+          <p className='text-slate-500 mt-4 max-w-2xl mx-auto'>
+            Discover programs designed to transform your academic journey and
+            professional research skills.
+          </p>
+        </div>
+        <div className='container mx-auto px-4 flex justify-center'>
+          <FeaturedCourseCardSkeleton />
+        </div>
+      </section>
+    );
+  }
+
+  if (!courses || courses.length === 0) {
+    return (
+      <section className='py-20 bg-white'>
+        <div className='container mx-auto px-4 text-center mb-12'>
+          <h2 className='text-3xl md:text-4xl font-bold text-slate-900'>
+            Explore Our Featured Course
+          </h2>
+          <p className='text-slate-500 mt-4 max-w-2xl mx-auto'>
+            Discover programs designed to transform your academic journey and
+            professional research skills.
+          </p>
+        </div>
+        <div className='container mx-auto px-4 flex justify-center'>
+          <div className='max-w-md w-full bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 p-8 text-center'>
+            <p className='text-slate-500'>
+              No courses available at the moment.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className='py-20 bg-white'>
       <div className='container mx-auto px-4 text-center mb-12'>
@@ -16,14 +61,16 @@ export function ExploreCourseCard() {
           professional research skills.
         </p>
       </div>
-      <div className='container mx-auto px-4 flex justify-center'>
-        {courses?.map((course) => (
+      <div className='container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
+        {courses.map((course) => (
           <div
             key={course.slug}
             className='max-w-md w-full bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 group'
           >
             <div className='relative h-64 overflow-hidden'>
-              <img
+              <Image
+                width={500}
+                height={600}
                 src={course.image}
                 alt={course.title}
                 className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700'
@@ -37,7 +84,7 @@ export function ExploreCourseCard() {
               <div className='flex items-center space-x-2 mb-4'>
                 <span className='w-6 h-0.5 bg-blue-500'></span>
                 <span className='text-slate-400 text-xs font-bold uppercase tracking-widest'>
-                  By {course.instructor}
+                  By {course.instructors.join(', ')}
                 </span>
               </div>
 
@@ -59,11 +106,17 @@ export function ExploreCourseCard() {
                   </span>
                 </div>
                 <div className='bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-black'>
-                  48% OFF
+                  {Math.round(
+                    (((course.originalPrice || 0) -
+                      (course.currentPrice || 0)) /
+                      (course.originalPrice || 0)) *
+                      100
+                  )}
+                  % OFF
                 </div>
               </div>
 
-              <Link href={`/courses/${course.slug}`}>
+              <Link href={`/courses/${course.slug}`} scroll>
                 <button className='cursor-pointer w-full bg-slate-900 text-white py-4 rounded-2xl font-bold group-hover:bg-blue-600 transition-all flex items-center justify-center'>
                   View Details
                   <svg

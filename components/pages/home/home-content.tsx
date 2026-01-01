@@ -1,5 +1,3 @@
-import { BlobSection } from './blob-section';
-import { FEATURED_COURSE } from './constants';
 import { CourseDetailCard } from './course-detail-card';
 import { ExploreCourseCard } from './explore-course-card';
 import { HeroContent } from './hero';
@@ -12,7 +10,7 @@ export function HomeContent() {
   return (
     <div>
       <HeroContent />
-      <BlobSection />
+      {/* <BlobSection /> */}
       <CourseDetailCard />
       <StatsSection />
       <ExploreCourseCard />

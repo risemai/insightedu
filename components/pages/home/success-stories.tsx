@@ -1,8 +1,16 @@
+'use client';
+
 import Marquee from 'react-fast-marquee';
-import { TESTIMONIALS } from './constants';
+import { useSuccessStories } from '@/hooks/successStories';
+import { SuccessStoriesSkeleton } from '@/components/skeletons';
+import Image from 'next/image';
 
 export function SuccessStories() {
-  return (
+  const { data, isLoading } = useSuccessStories();
+
+  return isLoading ? (
+    <SuccessStoriesSkeleton />
+  ) : (
     <section className='py-24 bg-gray-50 overflow-hidden'>
       <div className='container mx-auto px-4 text-center mb-16'>
         <div className='inline-block px-4 py-1.5 bg-blue-100 rounded-full text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-4'>
@@ -16,17 +24,19 @@ export function SuccessStories() {
           careers with Insight Edu.
         </p>
       </div>
-
+      (
       <div className='relative group'>
         <Marquee pauseOnHover={true} gradient={false} speed={40}>
           <div className='flex gap-4'>
-            {[...TESTIMONIALS, ...TESTIMONIALS].map((story, i) => (
+            {data?.map((story, i) => (
               <div
                 key={i}
                 className='shrink-0 w-87.5 md:w-112.5 bg-white p-8 rounded-[2rem] border border-gray-100'
               >
                 <div className='flex items-center mb-6'>
-                  <img
+                  <Image
+                    width={56}
+                    height={56}
                     src={story.image}
                     alt={story.name}
                     className='w-14 h-14 rounded-full border-2 border-blue-500 p-0.5 object-cover'
@@ -44,13 +54,14 @@ export function SuccessStories() {
                   <span className='absolute -top-4 -left-2 text-6xl text-blue-100 font-serif'>
                     “
                   </span>
-                  {story.story}
+                  {story.description}
                 </p>
               </div>
             ))}
           </div>
         </Marquee>
       </div>
+      )
     </section>
   );
 }

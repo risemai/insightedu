@@ -2,30 +2,75 @@
 
 import { Course } from '@/types';
 import { useQuery } from '@tanstack/react-query';
-import CoursesData from '@/lib/json-files/courses.json';
+import { client } from '@/sanity/lib/client';
+
+const COURSE_FIELDS = `
+  _id,
+  title,
+  "slug": slug.current,
+  instructors,
+  currentPrice,
+  originalPrice,
+  description,
+  modules,
+  hours,
+  quizzes,
+  assignments,
+  sessions,
+  isFeatured,
+  faq,
+  enrolled,
+  rating,
+  courseFeatures,
+  learningOutcomes,
+  totalReviews,
+  _createdAt
+`;
 
 export function useCourses() {
   return useQuery<Course[]>({
     queryKey: ['courses'],
-    queryFn: () => CoursesData,
+    queryFn: async () => {
+      return client.fetch(`
+        *[_type == "course"]
+        | order(_createdAt desc) {
+          ${COURSE_FIELDS},
+          "image": image.asset->url
+        }
+      `);
+    },
   });
 }
 
 export function useFeaturedCourse() {
   return useQuery<Course>({
-    queryKey: ['featured-courses'],
-    queryFn: () => {
-      const featuredCourse = CoursesData.filter(
-        (course: Course) => course.isFeatured
-      );
-      return featuredCourse[0];
+    queryKey: ['featured-course'],
+    queryFn: async () => {
+      return client.fetch(`
+        *[_type == "course" && isFeatured == true]
+        | order(_createdAt desc)[0] {
+          ${COURSE_FIELDS},
+          "image": image.asset->url
+        }
+      `);
     },
   });
 }
 
 export function useCoursesBySlug(slug: string) {
-  return useQuery<Course | undefined>({
+  return useQuery<Course>({
     queryKey: ['course', slug],
-    queryFn: () => CoursesData.find((course: Course) => course.slug === slug),
+    queryFn: async () => {
+      return client.fetch(
+        `
+        *[_type == "course" && slug.current == $slug][0]{
+          ${COURSE_FIELDS},
+          "image": image.asset->url
+        }
+      `,
+        { slug }
+      );
+    },
+    enabled: !!slug,
   });
 }
