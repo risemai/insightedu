@@ -2,6 +2,7 @@
 
 import { MentorSkeleton } from '@/components/skeletons';
 import { useMentors } from '@/hooks';
+import Link from 'next/link';
 
 export function TeamSection() {
   const { data, isLoading } = useMentors();
@@ -12,7 +13,7 @@ export function TeamSection() {
         <div className='flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6'>
           <div className='max-w-xl'>
             <h2 className='text-4xl font-black text-slate-900 mb-4'>
-              Meet Our Mentors
+              Meet Our Researchers
             </h2>
             <p className='text-slate-500 font-medium'>
               Learn from global research experts with decades of publication
@@ -37,16 +38,34 @@ export function TeamSection() {
                     <div className='absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors'></div>
 
                     <div className='absolute bottom-6 left-0 right-0 flex justify-center space-x-3 translate-y-20 group-hover:translate-y-0 transition-transform duration-500'>
-                      {['fb', 'ln', 'tw'].map((s) => (
+                      {member.researchGate && (
+                        <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer'>
+                          <span className='text-[10px] font-bold uppercase'>
+                            RG
+                          </span>
+                        </div>
+                      )}
+                      {member.googleScholar && (
+                        <Link
+                          href={member.googleScholar}
+                          className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer'
+                        >
+                          <span className='text-[10px] font-bold uppercase'>
+                            GS
+                          </span>
+                        </Link>
+                      )}
+
+                      {/* {['fb', 'ln', 'tw'].map((s) => (
                         <div
-                          key={s}
+                         
                           className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer'
                         >
                           <span className='text-[10px] font-bold uppercase'>
                             {s}
                           </span>
                         </div>
-                      ))}
+                      ))} */}
                     </div>
                   </div>
                   <div className='text-center'>
@@ -57,7 +76,7 @@ export function TeamSection() {
                       {member.role}
                     </p>
                     <p className='text-slate-400 text-sm font-medium'>
-                      Insight Edu Lab
+                      Risemai Lab
                     </p>
                   </div>
                 </div>

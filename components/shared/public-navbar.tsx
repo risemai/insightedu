@@ -39,10 +39,10 @@ export function PublicNavbar() {
       <div className='container mx-auto py-2 flex items-center justify-between md:px-0 px-3'>
         <Link href='/'>
           <Image
-            src='/insight-edu-logo.png'
+            src='/risemai-logo.png'
             width={150}
             height={47}
-            alt='Insight Edu Logo'
+            alt='Risemai Logo'
           />
         </Link>
         <div className='hidden md:block'>

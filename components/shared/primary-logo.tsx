@@ -17,14 +17,14 @@ export function PrimaryLogo({
   return (
     <Link href='/'>
       <Image
-        //    src='/insight-edu-logo.png'
+        //    src='/risemai-logo.png'
         //         width={150}
         //         height={47}
-        //         alt='Insight Edu Logo'
-        src='/insight-edu-logo.png'
+        //         alt='Risemai Logo'
+        src='/risemai-logo.png'
         width={width}
         height={height}
-        alt='Insight Edu Logo'
+        alt='Risemai Logo'
         className={cn('w-44 inline', className)}
       />
     </Link>

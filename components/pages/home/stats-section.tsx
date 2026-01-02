@@ -23,7 +23,7 @@ export function StatsSection() {
               Excellence
             </h2>
             <p className='text-slate-400 text-lg md:text-xl leading-relaxed font-medium mb-10'>
-              Welcome To Insight Edu, Bangladesh’s Largest Online Learning And
+              Welcome To Risemai, Bangladesh’s Largest Online Learning And
               Research Skill Development Platform. We bridge the gap between
               academic theory and practical publication excellence.
             </p>

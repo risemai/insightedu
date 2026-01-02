@@ -8,14 +8,14 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Insight Edu — Learn, Grow, Succeed',
+  title: 'Risemai — Learn, Grow, Succeed',
   description:
-    'Insight Edu provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
+    'Risemai provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
   keywords: [
-    'Insight-Edu',
-    'insight edu',
-    'insight-edu',
-    'Insight Edu',
+    'RiseMai',
+    'risemai',
+    'risemai',
+    'Risemai',
     'online learning',
     'e-learning',
     'courses',
@@ -32,25 +32,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Insight Edu — Learn, Grow, Succeed',
+    title: 'Risemai — Learn, Grow, Succeed',
     description:
-      'Insight Edu provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
+      'Risemai provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
     url: 'https://insightedu.cloud',
     images: [
       {
         url: 'https://insightedu.cloud/assets/img/og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Insight Edu — Learn, Grow, Succeed',
+        alt: 'Risemai — Learn, Grow, Succeed',
       },
     ],
-    siteName: 'Insight Edu',
+    siteName: 'Risemai',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Insight Edu — Learn, Grow, Succeed',
+    title: 'Risemai — Learn, Grow, Succeed',
     description:
-      'Insight Edu provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
+      'Risemai provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
     images: ['https://insightedu.cloud/assets/img/og.jpg'],
   },
   metadataBase: new URL('https://insightedu.cloud'),
@@ -59,21 +59,21 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Insight Edu',
+  name: 'Risemai',
   url: 'https://insightedu.cloud',
   publisher: {
     '@type': 'Organization',
-    name: 'Insight Edu',
+    name: 'Risemai',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://insightedu.cloud/insight-edu-logo.svg',
+      url: 'https://insightedu.cloud/risemai-logo.svg',
     },
   },
   sameAs: [
     'https://www.facebook.com/insightedu',
     'https://twitter.com/insightedu',
-    'https://www.linkedin.com/company/insight-edu',
-    'https://github.com/insight-edu',
+    'https://www.linkedin.com/company/risemai',
+    'https://github.com/risemai',
   ],
   hasPart: [
     {

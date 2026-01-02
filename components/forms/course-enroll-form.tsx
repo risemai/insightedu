@@ -17,7 +17,7 @@ import {
 import { Input } from '../ui/input';
 
 import { Button } from '../ui/button';
-import { enrollCourse } from '@/server/enroll/entroll';
+import { enrollCourse } from '@/server/entroll';
 import { toast } from 'sonner';
 
 const formSchema = z.object({

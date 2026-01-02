@@ -29,6 +29,43 @@ export const mentorType = defineType({
     }),
 
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 5,
+    }),
+
+    defineField({
+      name: 'researchGate',
+      title: 'ResearchGate Profile URL',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+        }).custom((url) => {
+          if (!url) return true;
+          return url.includes('researchgate.net')
+            ? true
+            : 'Must be a valid ResearchGate profile link';
+        }),
+    }),
+
+    defineField({
+      name: 'googleScholar',
+      title: 'Google Scholar Profile URL',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['http', 'https'],
+        }).custom((url) => {
+          if (!url) return true;
+          return url.includes('scholar.google')
+            ? true
+            : 'Must be a valid Google Scholar profile link';
+        }),
+    }),
+
+    defineField({
       name: 'image',
       title: 'Profile Image',
       type: 'image',

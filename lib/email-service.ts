@@ -1,6 +1,35 @@
 import { getEnrollToAdminTemplate } from '@/components/emails/enroll-to-admin-tempalte';
 import { getEnrolledUserTemplate } from '@/components/emails/enrolled-user-template';
 import { transporter } from './mailer';
+import { contactFormEmailTemplate } from '@/components/emails/contact-form-email-template';
+
+export async function sendContactEmails({
+  name,
+  email,
+  subject,
+  message,
+}: {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}) {
+  try {
+    const adminEmailOptions = {
+      from: process.env.GMAIL_USER,
+      to: process.env.GMAIL_USER,
+      subject: `New Contact Message - ${subject}`,
+      html: contactFormEmailTemplate({ name, email, message }),
+    };
+
+    await transporter.sendMail(adminEmailOptions);
+
+    return { success: true };
+  } catch (error) {
+    console.error('Error sending contact emails:', error);
+    return { success: false, error };
+  }
+}
 
 export async function sendEnrollmentEmails({
   userName,
@@ -32,7 +61,7 @@ export async function sendEnrollmentEmails({
     const userMailOptions = {
       from: process.env.GMAIL_USER,
       to: userEmail,
-      subject: 'Enrollment Request Received - Insight Edu',
+      subject: 'Enrollment Request Received - Risemai',
       html: getEnrolledUserTemplate({
         userName,
         courseTitle,

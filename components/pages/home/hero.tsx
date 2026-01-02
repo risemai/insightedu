@@ -1,12 +1,12 @@
 export function HeroContent() {
   return (
-    <section className='lg:pt-20 pb-40  lg:pb-52 px-4 bg-gray-50'>
+    <section className='pt-12 lg:pt-24 pb-6 lg:pb-10 px-4 bg-gray-50'>
       <div className='container mx-auto'>
         <div className='relative rounded-[2.5rem] overflow-hidden bg-slate-900 min-h-125 flex items-center justify-center p-8 md:p-16'>
           <div
             className='absolute inset-0 z-0 opacity-50 mix-blend-overlay'
             style={{
-              backgroundImage: `url('/assets/img/insight-edu-01.jpg')`,
+              backgroundImage: `url('/assets/img/risemai-01.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -18,7 +18,7 @@ export function HeroContent() {
             </div>
             <h1 className='text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8'>
               Discover, Create, Share Your Academic{' '}
-              <span className='text-blue-500'>Home</span> At Insight Edu
+              <span className='text-blue-500'>Home</span> At Risemai
             </h1>
             <p className='text-slate-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium'>
               Empowering the next generation of researchers with world-class

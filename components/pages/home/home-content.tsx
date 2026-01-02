@@ -1,4 +1,4 @@
-import { CourseDetailCard } from './course-detail-card';
+import { CoreValues, OurJourney, StartResearchJourney } from '../about';
 import { ExploreCourseCard } from './explore-course-card';
 import { HeroContent } from './hero';
 import { MissionSection } from './mission-section';
@@ -10,13 +10,16 @@ export function HomeContent() {
   return (
     <div>
       <HeroContent />
+      <CoreValues />
       {/* <BlobSection /> */}
-      <CourseDetailCard />
+      {/* <CourseDetailCard /> */}
       <StatsSection />
+      <OurJourney />
       <ExploreCourseCard />
       <SuccessStories />
       <TeamSection />
       <MissionSection />
+      <StartResearchJourney />
     </div>
   );
 }

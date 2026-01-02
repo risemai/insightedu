@@ -10,6 +10,9 @@ name,
 role,
 "image": image.asset->url,
 "alt": image.alt,
+description,
+researchGate,
+googleScholar,
  _createdAt
 `;
 
