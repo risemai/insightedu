@@ -5,10 +5,37 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api', '/_next'],
+        allow: [
+          '/',
+          '/privacy-policy',
+          '/terms-of-conditions',
+          '/support-center',
+          '/about',
+          '/courses',
+          '/research',
+          '/publications',
+          '/contact',
+        ],
+        disallow: ['/api', '/_next', '/studio'],
+        crawlDelay: 1,
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: [
+          '/',
+          '/privacy-policy',
+          '/terms-of-conditions',
+          '/support-center',
+          '/about',
+          '/courses',
+          '/research',
+          '/publications',
+          '/contact',
+        ],
+        disallow: ['/api', '/_next', '/studio'],
       },
     ],
     sitemap: `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`,
+    host: `${process.env.NEXT_PUBLIC_BASE_URL}`,
   };
 }

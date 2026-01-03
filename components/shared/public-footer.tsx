@@ -127,7 +127,7 @@ export function PublicFooter() {
             <ul className='space-y-4 font-bold'>
               <li>
                 <Link
-                  href='#'
+                  href='/privacy-policy'
                   className='hover:text-blue-500 transition-colors'
                 >
                   Privacy Policy
@@ -135,7 +135,7 @@ export function PublicFooter() {
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/terms-of-conditions'
                   className='hover:text-blue-500 transition-colors'
                 >
                   Terms of Service
@@ -143,7 +143,7 @@ export function PublicFooter() {
               </li>
               <li>
                 <Link
-                  href='#'
+                  href='/support-center'
                   className='hover:text-blue-500 transition-colors'
                 >
                   Support Center
