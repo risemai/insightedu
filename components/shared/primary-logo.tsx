@@ -17,11 +17,7 @@ export function PrimaryLogo({
   return (
     <Link href='/'>
       <Image
-        //    src='/risemai-logo.png'
-        //         width={150}
-        //         height={47}
-        //         alt='Risemai Logo'
-        src='/risemai-logo.png'
+        src='/rise-mai-logo-01.png'
         width={width}
         height={height}
         alt='Risemai Logo'

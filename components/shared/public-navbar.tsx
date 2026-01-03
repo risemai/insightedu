@@ -39,7 +39,7 @@ export function PublicNavbar() {
       <div className='container mx-auto py-2 flex items-center justify-between md:px-0 px-3'>
         <Link href='/'>
           <Image
-            src='/risemai-logo.png'
+            src='/rise-mai-logo-01.png'
             width={150}
             height={47}
             alt='Risemai Logo'
