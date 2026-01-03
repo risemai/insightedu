@@ -14,8 +14,6 @@ export const metadata: Metadata = {
   keywords: [
     'RiseMai',
     'risemai',
-    'risemai',
-    'Risemai',
     'online learning',
     'e-learning',
     'courses',
