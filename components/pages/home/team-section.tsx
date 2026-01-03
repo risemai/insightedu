@@ -1,11 +1,11 @@
 'use client';
 
 import { MentorSkeleton } from '@/components/skeletons';
-import { useMentors } from '@/hooks';
+import { useMentorPaginated } from '@/hooks/mentor';
 import Link from 'next/link';
 
 export function TeamSection() {
-  const { data, isLoading } = useMentors();
+  const { data, isLoading } = useMentorPaginated(1, 4);
 
   return (
     <section className='py-24 bg-white'>

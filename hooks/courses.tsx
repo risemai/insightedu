@@ -27,6 +27,24 @@ const COURSE_FIELDS = `
   _createdAt
 `;
 
+export function useCoursesPaginated(page: number, limit: number) {
+  const skip = (page - 1) * limit;
+
+  return useQuery<Course[]>({
+    queryKey: ['courses', page, limit],
+    queryFn: async () => {
+      return client.fetch(`
+        *[_type == "course"]
+        | order(_createdAt desc)
+        [${skip}...${skip + limit}] {
+          ${COURSE_FIELDS},
+          "image": image.asset->url
+        }
+      `);
+    },
+  });
+}
+
 export function useCourses() {
   return useQuery<Course[]>({
     queryKey: ['courses'],

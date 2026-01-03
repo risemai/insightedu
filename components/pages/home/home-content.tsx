@@ -11,8 +11,6 @@ export function HomeContent() {
     <div>
       <HeroContent />
       <CoreValues />
-      {/* <BlobSection /> */}
-      {/* <CourseDetailCard /> */}
       <StatsSection />
       <OurJourney />
       <ExploreCourseCard />

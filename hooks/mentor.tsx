@@ -16,6 +16,21 @@ googleScholar,
  _createdAt
 `;
 
+export function useMentorPaginated(page: number, limit: number) {
+  return useQuery<MentorType[]>({
+    queryKey: ['mentors', page, limit],
+    queryFn: async () => {
+      return client.fetch(`
+        *[_type == "mentor"]
+        | order(_createdAt desc)
+        [${(page - 1) * limit}...${page * limit}] {
+          ${MENTOR_MENTOR},
+        }
+      `);
+    },
+  });
+}
+
 export function useMentors() {
   return useQuery<MentorType[]>({
     queryKey: ['mentors'],

@@ -1,3 +1,5 @@
 import { CoursesDetailsContent } from './courses-details-content';
+import { CoursesPageContent } from './courses-page-content';
+import { CoursesCards } from './courses-cards';
 
-export { CoursesDetailsContent };
+export { CoursesDetailsContent, CoursesPageContent, CoursesCards };
