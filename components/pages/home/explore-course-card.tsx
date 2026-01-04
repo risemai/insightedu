@@ -27,7 +27,7 @@ export function ExploreCourseCard() {
     );
   }
 
-  if (!courses || courses.length === 0) {
+  if (!courses || courses.courses.length === 0) {
     return (
       <section className='py-20 bg-white'>
         <div className='container mx-auto px-4 text-center mb-12'>
@@ -62,7 +62,7 @@ export function ExploreCourseCard() {
         </p>
       </div>
       <div className='container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-        {courses.map((course) => (
+        {courses?.courses.map((course) => (
           <div
             key={course.slug}
             className='max-w-md w-full bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 group'

@@ -32,14 +32,25 @@ export function useCoursesPaginated(paramString?: string) {
 
   const search = params.get('search') || '';
   const page = Number(params.get('page')) || 1;
-
   const limit = Number(params.get('limit')) || 12;
   const skip = (page - 1) * limit;
 
-  return useQuery<Course[]>({
-    queryKey: ['courses', page, search],
+  return useQuery<{
+    courses: Course[];
+    totalCount: number;
+    page: number;
+    totalPages: number;
+  }>({
+    queryKey: ['courses', page, search, limit],
     queryFn: async () => {
-      return client.fetch(`
+      const totalCount: number = await client.fetch(
+        `count(*[_type == "course" && (
+          title match "${search}*" ||
+          description match "${search}*"
+        )])`
+      );
+
+      const courses: Course[] = await client.fetch(`
         *[_type == "course" && (
           title match "${search}*" ||
           description match "${search}*"
@@ -50,6 +61,15 @@ export function useCoursesPaginated(paramString?: string) {
           "image": image.asset->url
         }
       `);
+
+      const totalPages = Math.ceil(totalCount / limit);
+
+      return {
+        courses,
+        totalCount,
+        page,
+        totalPages,
+      };
     },
     placeholderData: keepPreviousData,
   });

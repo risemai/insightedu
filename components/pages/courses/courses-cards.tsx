@@ -11,7 +11,6 @@ import { debounce, generateQueryString } from '@/lib/utils';
 export function CoursesCards() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  // const { data: courses, isLoading } = useCourses();
 
   const [params, setParams] = useState({
     search: searchParams.get('search') || '',
@@ -24,7 +23,7 @@ export function CoursesCards() {
 
   const queryString = generateQueryString(params);
 
-  const { data: courses, isLoading } = useCoursesPaginated(queryString);
+  const { data, isLoading } = useCoursesPaginated(queryString);
 
   const debouncedSearch = useMemo(
     () =>
@@ -42,25 +41,6 @@ export function CoursesCards() {
     router.replace(queryString, { scroll: false });
   }, [queryString, router]);
 
-  if (isLoading) {
-    return (
-      <section className='py-20 bg-white'>
-        <div className='container mx-auto px-4 text-center mb-12'>
-          <h2 className='text-3xl md:text-4xl font-bold text-slate-900'>
-            Explore Our Featured Course
-          </h2>
-          <p className='text-slate-500 mt-4 max-w-2xl mx-auto'>
-            Discover programs designed to transform your academic journey and
-            professional research skills.
-          </p>
-        </div>
-        <div className='container mx-auto px-4 flex justify-center'>
-          <FeaturedCourseCardSkeleton />
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section className='py-20 bg-white'>
       <div className='container mx-auto px-4 text-center mb-12'>
@@ -72,7 +52,7 @@ export function CoursesCards() {
           professional research skills.
         </p>
       </div>
-      <div className='max-w-2xl mx-auto mt-10 relative group'>
+      <div className='max-w-2xl mx-auto mt-10 relative group md:px-0 px-2'>
         <div className='absolute -inset-1 bg-linear-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500'></div>
         <div className='relative my-20'>
           <div className='absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none'>
@@ -108,18 +88,14 @@ export function CoursesCards() {
         </div>
       </div>
       {isLoading ? (
-        <FeaturedCourseCardSkeleton />
-      ) : !courses || courses.length === 0 ? (
-        <div className='container mx-auto px-4 flex justify-center'>
-          <div className='max-w-md w-full bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 p-8 text-center'>
-            <p className='text-slate-500'>
-              No courses available at the moment.
-            </p>
-          </div>
+        <div className='container mx-auto px-4 flex md:flex-row flex-col gap-6 justify-center'>
+          <FeaturedCourseCardSkeleton />
+          <FeaturedCourseCardSkeleton />
+          <FeaturedCourseCardSkeleton />
         </div>
       ) : (
         <div className='container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-          {courses.map((course) => (
+          {data?.courses.map((course) => (
             <div
               key={course.slug}
               className='max-w-md w-full bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 group'
@@ -199,14 +175,34 @@ export function CoursesCards() {
         </div>
       )}
 
-      <div className='flex justify-center gap-5 mt-10 md:mt-14'>
-        <button className='cursor-pointer bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all'>
-          Previous
-        </button>
-        <button className='cursor-pointer bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all'>
-          Next
-        </button>
-      </div>
+      {(data?.totalPages || 0) > 1 && (
+        <div className='flex justify-center gap-5 mt-10 md:mt-14'>
+          <button
+            disabled={data?.page === 1}
+            onClick={() =>
+              setParams((prev) => ({
+                ...prev,
+                page: String(Number(prev.page) - 1),
+              }))
+            }
+            className='cursor-pointer bg-blue-500 disabled:bg-blue-300 disabled:cursor-not-allowed text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all'
+          >
+            Previous
+          </button>
+          <button
+            disabled={data?.page === data?.totalPages}
+            onClick={() =>
+              setParams((prev) => ({
+                ...prev,
+                page: String(Number(prev.page) + 1),
+              }))
+            }
+            className='cursor-pointer bg-blue-500 disabled:bg-blue-300 disabled:cursor-not-allowed text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all'
+          >
+            Next
+          </button>
+        </div>
+      )}
     </section>
   );
 }
