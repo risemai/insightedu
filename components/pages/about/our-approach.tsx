@@ -27,7 +27,7 @@ export function OurApproach() {
                 alt='Our Approach'
                 className='w-full h-full object-cover'
               />
-              <div className='absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent'></div>
+              <div className='absolute inset-0 bg-linear-to-t from-blue-900/30 to-transparent'></div>
             </div>
           </div>
 
@@ -55,8 +55,8 @@ export function OurApproach() {
               },
             ].map((approach, idx) => (
               <div key={idx} className='flex gap-6'>
-                <div className='flex-shrink-0'>
-                  <div className='w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg'>
+                <div className='shrink-0'>
+                  <div className='w-16 h-16 rounded-2xl bg-linear-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg'>
                     <span className='text-white font-black text-lg'>
                       {approach.step}
                     </span>
@@ -75,7 +75,7 @@ export function OurApproach() {
           </div>
         </div>
 
-        <div className='bg-gradient-to-br from-slate-50 to-blue-50 rounded-[3rem] p-12 lg:p-16'>
+        <div className='bg-linear-to-br from-slate-50 to-blue-50 rounded-[3rem] p-12 lg:p-16'>
           <div className='text-center mb-12'>
             <h3 className='text-3xl font-black text-slate-900 mb-4'>
               Why Our Approach Works

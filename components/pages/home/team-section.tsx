@@ -35,11 +35,11 @@ export function TeamSection() {
                       alt={member.name}
                       className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
                     />
-                    <div className='absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/20 transition-colors'></div>
+                    <div className='absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/20 transition-colors'></div>
 
                     <div className='absolute bottom-6 left-0 right-0 flex justify-center space-x-3 translate-y-20 group-hover:translate-y-0 transition-transform duration-500'>
                       {member.researchGate && (
-                        <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer'>
+                        <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-500 hover:text-white transition-colors cursor-pointer'>
                           <span className='text-[10px] font-bold uppercase'>
                             RG
                           </span>
@@ -48,7 +48,7 @@ export function TeamSection() {
                       {member.googleScholar && (
                         <Link
                           href={member.googleScholar}
-                          className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer'
+                          className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-500 hover:text-white transition-colors cursor-pointer'
                         >
                           <span className='text-[10px] font-bold uppercase'>
                             GS
@@ -59,7 +59,7 @@ export function TeamSection() {
                       {/* {['fb', 'ln', 'tw'].map((s) => (
                         <div
                          
-                          className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-600 hover:text-white transition-colors cursor-pointer'
+                          className='w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-900 shadow-lg hover:bg-blue-500 hover:text-white transition-colors cursor-pointer'
                         >
                           <span className='text-[10px] font-bold uppercase'>
                             {s}
@@ -76,7 +76,7 @@ export function TeamSection() {
                       {member.role}
                     </p>
                     <p className='text-slate-400 text-sm font-medium'>
-                      Risemai Lab
+                      RISEMAI
                     </p>
                   </div>
                 </div>

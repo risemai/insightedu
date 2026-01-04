@@ -1,12 +1,12 @@
 'use client';
 
-import { useCourses } from '@/hooks';
 import Link from 'next/link';
 import { FeaturedCourseCardSkeleton } from '@/components/skeletons/featured-course-card-skeleton';
 import Image from 'next/image';
+import { useCoursesPaginated } from '@/hooks/courses';
 
 export function ExploreCourseCard() {
-  const { data: courses, isLoading } = useCourses();
+  const { data: courses, isLoading } = useCoursesPaginated('?page=1&limit=3');
 
   if (isLoading) {
     return (
@@ -75,9 +75,11 @@ export function ExploreCourseCard() {
                 alt={course.title}
                 className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700'
               />
-              <div className='absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-blue-600 text-xs font-black uppercase shadow-sm'>
-                Best Seller
-              </div>
+              {(course.totalReviews || 0) > 200 && (
+                <div className='absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-blue-600 text-xs font-black uppercase shadow-sm'>
+                  Best Seller
+                </div>
+              )}
             </div>
 
             <div className='p-8'>
@@ -105,7 +107,7 @@ export function ExploreCourseCard() {
                     ৳ {course.currentPrice.toLocaleString()}
                   </span>
                 </div>
-                <div className='bg-blue-600 text-white text-[10px] px-2 py-1 rounded font-black'>
+                <div className='bg-blue-500 text-white text-[10px] px-2 py-1 rounded font-black'>
                   {Math.round(
                     (((course.originalPrice || 0) -
                       (course.currentPrice || 0)) /
@@ -117,7 +119,7 @@ export function ExploreCourseCard() {
               </div>
 
               <Link href={`/courses/${course.slug}`} scroll>
-                <button className='cursor-pointer w-full bg-slate-900 text-white py-4 rounded-2xl font-bold group-hover:bg-blue-600 transition-all flex items-center justify-center'>
+                <button className='cursor-pointer w-full bg-slate-900 text-white py-4 rounded-2xl font-bold group-hover:bg-blue-500 transition-all flex items-center justify-center'>
                   View Details
                   <svg
                     className='w-5 h-5 ml-2'

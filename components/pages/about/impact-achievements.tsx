@@ -1,6 +1,6 @@
 export function ImpactAchievements() {
   return (
-    <section className='py-24 bg-gradient-to-br from-blue-600 to-blue-800'>
+    <section className='py-24 bg-linear-to-br from-blue-600 to-blue-800'>
       <div className='container mx-auto px-4'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-black text-white mb-4'>

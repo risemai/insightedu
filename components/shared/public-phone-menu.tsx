@@ -9,12 +9,6 @@ import {
   SheetTitle,
 } from '../ui/sheet';
 import { PrimaryLogo } from './primary-logo';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '../ui/accordion';
 
 type PhoneMenuProps = {
   isOpen: boolean;
@@ -25,12 +19,7 @@ const menuItems = [
   { label: 'About Us', href: '/about' },
   {
     label: 'Courses',
-    href: '#',
-    submenu: [
-      { label: 'Research Methodology', href: '#' },
-      { label: 'Academic Writing', href: '#' },
-      { label: 'Data Analysis', href: '#' },
-    ],
+    href: '/courses',
   },
   { label: 'Research', href: '/research' },
   { label: 'Publications', href: '/publications' },
@@ -51,61 +40,18 @@ export function PublicPhoneMenu({ isOpen, setIsOpen }: PhoneMenuProps) {
 
         <nav>
           <ul>
-            {menuItems.map((item) => {
-              if (item.submenu) {
-                return (
-                  <Accordion
-                    key={item.label}
-                    type='single'
-                    collapsible
-                    className='px-4'
+            {menuItems.map((item) => (
+              <li key={item.label} className='mb-1'>
+                <SheetClose asChild>
+                  <Link
+                    href={item.href}
+                    className='block w-full rounded-xl px-4 py-3 text-sm font-medium'
                   >
-                    <AccordionItem value={item.label}>
-                      <AccordionTrigger className='focus:none'>
-                        {item.label}
-                      </AccordionTrigger>
-                      <AccordionContent className='pb-0'>
-                        {item.submenu.map((subItem) => (
-                          <li key={subItem.label} className='mb-1'>
-                            <SheetClose asChild>
-                              <Link
-                                href={subItem.href}
-                                className='block w-full rounded-xl py-3 text-sm font-medium'
-                              >
-                                {subItem.label}
-                              </Link>
-                            </SheetClose>
-                          </li>
-                        ))}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                  //   <li key={item.label} className='mb-1'>
-                  //     <SheetClose asChild>
-                  //       <Link
-                  //         href={item.href}
-                  //         className='block w-full rounded-xl px-4 py-3 text-sm font-medium text-gray-700 hover:bg-white/5 transition'
-                  //       >
-                  //         {item.label}
-                  //       </Link>
-                  //     </SheetClose>
-                  //   </li>
-                );
-              } else {
-                return (
-                  <li key={item.label} className='mb-1'>
-                    <SheetClose asChild>
-                      <Link
-                        href={item.href}
-                        className='block w-full rounded-xl px-4 py-3 text-sm font-medium'
-                      >
-                        {item.label}
-                      </Link>
-                    </SheetClose>
-                  </li>
-                );
-              }
-            })}
+                    {item.label}
+                  </Link>
+                </SheetClose>
+              </li>
+            ))}
             {/* <li>
               <SheetClose asChild>
                 <Link

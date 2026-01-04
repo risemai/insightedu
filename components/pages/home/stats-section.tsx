@@ -30,7 +30,7 @@ export function StatsSection() {
             <div className='flex flex-wrap gap-4'>
               <Link
                 href='/about'
-                className='bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-500 transition-all'
+                className='bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-500 transition-all'
               >
                 Learn Our History
               </Link>

@@ -4,11 +4,9 @@ import Image from 'next/image';
 import { useState } from 'react';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from '../ui/navigation-menu';
 import Link from 'next/link';
 import { PublicPhoneMenu } from './public-phone-menu';
@@ -22,12 +20,7 @@ export function PublicNavbar() {
     { label: 'About Us', href: '/about' },
     {
       label: 'Courses',
-      href: '#',
-      submenu: [
-        { label: 'Research Methodology', href: '#' },
-        { label: 'Academic Writing', href: '#' },
-        { label: 'Data Analysis', href: '#' },
-      ],
+      href: '/courses',
     },
     { label: 'Research', href: '/research' },
     { label: 'Publications', href: '/publications' },
@@ -35,7 +28,7 @@ export function PublicNavbar() {
   ];
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100'>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 py-1.5'>
       <div className='container mx-auto py-2 flex items-center justify-between md:px-0 px-3'>
         <Link href='/'>
           <Image
@@ -49,38 +42,15 @@ export function PublicNavbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className='flex gap-4'>
-                {menuItems.map((item) => {
-                  if (item.submenu) {
-                    return (
-                      <div key={item.label}>
-                        <NavigationMenuTrigger className='font-medium'>
-                          {item.label}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent className='min-w-50'>
-                          {item.submenu.map((subItem) => (
-                            <NavigationMenuLink
-                              key={subItem.label}
-                              className='font-medium'
-                              asChild
-                            >
-                              <Link href={subItem.href}>{subItem.label}</Link>
-                            </NavigationMenuLink>
-                          ))}
-                        </NavigationMenuContent>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <NavigationMenuLink
-                        key={item.label}
-                        className='font-medium'
-                        asChild
-                      >
-                        <Link href={item.href}>{item.label}</Link>
-                      </NavigationMenuLink>
-                    );
-                  }
-                })}
+                {menuItems.map((item) => (
+                  <NavigationMenuLink
+                    key={item.label}
+                    className='font-medium'
+                    asChild
+                  >
+                    <Link href={item.href}>{item.label}</Link>
+                  </NavigationMenuLink>
+                ))}
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

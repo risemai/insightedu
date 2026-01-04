@@ -10,7 +10,7 @@ export function OurJourney() {
                 alt='Our Story'
                 className='w-full h-full object-cover'
               />
-              <div className='absolute inset-0 bg-blue-600/10'></div>
+              <div className='absolute inset-0 bg-blue-500/10'></div>
             </div>
           </div>
           <div className='lg:w-1/2'>

@@ -54,7 +54,7 @@ export function LeadershipTeam() {
                       {member.researchGate && (
                         <Link
                           href={member.researchGate}
-                          className='w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-slate-900 transition-colors'
+                          className='w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-slate-900 transition-colors'
                         >
                           RG
                         </Link>
@@ -62,7 +62,7 @@ export function LeadershipTeam() {
                       {member.googleScholar && (
                         <Link
                           href={member.googleScholar}
-                          className='w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-blue-600 hover:text-white transition-colors'
+                          className='w-8 h-8 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs font-bold cursor-pointer hover:bg-blue-500 hover:text-white transition-colors'
                         >
                           GS
                         </Link>

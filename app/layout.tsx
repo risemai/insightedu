@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import { Suspense } from 'react';
+import { Loading } from '@/components/shared';
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -10,7 +12,7 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'Risemai — Learn, Grow, Succeed',
   description:
-    'Risemai provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
+    'Research institute of sustainable economic, medical & agricultural innovation.',
   keywords: [
     'RiseMai',
     'risemai',
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Risemai — Learn, Grow, Succeed',
     description:
-      'Risemai provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
+      'Research institute of sustainable economic, medical & agricultural innovation.',
     url: 'https://insightedu.cloud',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Risemai — Learn, Grow, Succeed',
     description:
-      'Risemai provides high-quality online courses, hands-on projects, and resources to help learners and educators succeed.',
+      'Research institute of sustainable economic, medical & agricultural innovation.',
     images: ['https://insightedu.cloud/assets/img/og.jpg'],
   },
   metadataBase: new URL('https://insightedu.cloud'),
@@ -111,7 +113,7 @@ export default function RootLayout({
       <body
         className={`${plus_jakarta_sans.className} antialiased min-h-screen bg-gray-50 overflow-x-hidden`}
       >
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
   );

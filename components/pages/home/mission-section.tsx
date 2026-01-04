@@ -6,7 +6,7 @@ export function MissionSection() {
           <h2 className='text-4xl md:text-5xl font-black text-slate-900'>
             Our Mission
           </h2>
-          <div className='h-1 w-20 bg-blue-600 mx-auto mt-6 rounded-full'></div>
+          <div className='h-1 w-20 bg-blue-500 mx-auto mt-6 rounded-full'></div>
         </div>
 
         <div className='bg-white rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-900/5 flex flex-col lg:flex-row items-stretch min-h-125 border border-gray-100'>
@@ -61,7 +61,7 @@ export function MissionSection() {
                   </li>
                 ))}
               </ul>
-              <button className='bg-blue-600 text-white px-10 py-5 rounded-2xl font-black hover:bg-blue-700 transition-all shadow-xl shadow-blue-200'>
+              <button className='bg-blue-500 text-white px-10 py-5 rounded-2xl font-black hover:bg-blue-700 transition-all shadow-xl shadow-blue-200'>
                 Join Our Community
               </button>
             </div>

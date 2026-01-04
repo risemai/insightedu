@@ -3,7 +3,7 @@ import { CoursesCards } from './courses-cards';
 
 export function CoursesPageContent() {
   return (
-    <div className='space-y-6 md:space-y-10'>
+    <div>
       <CourseDetailCard />
       <CoursesCards />
     </div>

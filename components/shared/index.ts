@@ -6,6 +6,7 @@ import { UnderConstruction } from './under-construction';
 import { Loading } from './loading';
 import { Modal } from './modal';
 import { AlertModal } from './alert-modal';
+import { WhatsappButton } from './whatsapp-button';
 
 export {
   PublicNavbar,
@@ -16,4 +17,5 @@ export {
   Loading,
   Modal,
   AlertModal,
+  WhatsappButton,
 };

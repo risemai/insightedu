@@ -5,6 +5,7 @@ import { successStory } from './successStory';
 import { privacyPolicy } from './privacyPolicy';
 import { termsConditions } from './termsConditions';
 import { supportCenter } from './supportCenter';
+import { faqType } from './faqType';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,5 +15,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     privacyPolicy,
     termsConditions,
     supportCenter,
+    faqType,
   ],
 };

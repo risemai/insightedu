@@ -1,7 +1,7 @@
 'use client';
 
 import { Course } from '@/types';
-import { useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { client } from '@/sanity/lib/client';
 
 const COURSE_FIELDS = `
@@ -27,21 +27,31 @@ const COURSE_FIELDS = `
   _createdAt
 `;
 
-export function useCoursesPaginated(page: number, limit: number) {
+export function useCoursesPaginated(paramString?: string) {
+  const params = new URLSearchParams(paramString || '');
+
+  const search = params.get('search') || '';
+  const page = Number(params.get('page')) || 1;
+
+  const limit = Number(params.get('limit')) || 12;
   const skip = (page - 1) * limit;
 
   return useQuery<Course[]>({
-    queryKey: ['courses', page, limit],
+    queryKey: ['courses', page, search],
     queryFn: async () => {
       return client.fetch(`
-        *[_type == "course"]
+        *[_type == "course" && (
+          title match "${search}*" ||
+          description match "${search}*"
+        )]
         | order(_createdAt desc)
-        [${skip}...${skip + limit}] {
+        [${skip}...${skip + limit}]{
           ${COURSE_FIELDS},
           "image": image.asset->url
         }
       `);
     },
+    placeholderData: keepPreviousData,
   });
 }
 
