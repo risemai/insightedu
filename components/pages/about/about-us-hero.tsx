@@ -18,8 +18,8 @@ export function AboutUsHero() {
             <span className='text-blue-600'>Research</span> in Bangladesh.
           </h1>
           <p className='text-slate-500 text-xl md:text-2xl leading-relaxed font-medium'>
-            Risemai Research and Consultancy Center is more than an educational
-            platform. We are a catalyst for academic excellence and
+            InsightEdu Research and Consultancy Center is more than an
+            educational platform. We are a catalyst for academic excellence and
             evidence-based innovation.
           </p>
         </div>

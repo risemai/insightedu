@@ -21,11 +21,11 @@ export function OurJourney() {
               Our Journey
             </div>
             <h2 className='text-4xl font-black text-slate-900 mb-8'>
-              How Risemai Started
+              How InsightEdu Started
             </h2>
             <p className='text-slate-500 text-lg leading-relaxed mb-6 font-medium'>
               Founded by a group of passionate researchers and academic editors,
-              Risemai was born from a simple observation: there was a
+              InsightEdu was born from a simple observation: there was a
               significant gap between graduation and the skills required for
               high-impact international publication.
             </p>

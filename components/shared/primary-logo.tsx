@@ -20,7 +20,7 @@ export function PrimaryLogo({
         src='/insight-edu-logo.png'
         width={width}
         height={height}
-        alt='Risemai Logo'
+        alt='InsightEdu Logo'
         className={cn('w-44 inline', className)}
       />
     </Link>

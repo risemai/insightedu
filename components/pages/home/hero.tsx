@@ -6,7 +6,7 @@ export function HeroContent() {
           <div
             className='absolute inset-0 z-0 opacity-50 mix-blend-overlay'
             style={{
-              backgroundImage: `url('/assets/img/risemai-01.jpg')`,
+              backgroundImage: `url('/assets/img/insight-edu-img-01.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -18,7 +18,7 @@ export function HeroContent() {
             </div>
             <h1 className='text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-8'>
               Discover, Create, Share Your Academic{' '}
-              <span className='text-blue-500'>Home</span> At RISEMAI
+              <span className='text-blue-500'>Home</span> At INSIGHTEDU
             </h1>
             <p className='text-slate-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium'>
               Empowering the next generation of researchers with world-class

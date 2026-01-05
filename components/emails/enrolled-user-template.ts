@@ -13,7 +13,7 @@ export function getEnrolledUserTemplate({
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enrollment Request Received - Risemai</title>
+  <title>Enrollment Request Received - InsightEdu</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -29,7 +29,7 @@ export function getEnrolledUserTemplate({
   <div class="container">
     <div class="header">
       <h1>🎉 Enrollment Request Received!</h1>
-      <p>Welcome to Risemai</p>
+      <p>Welcome to InsightEdu</p>
     </div>
 
     <div class="content">
@@ -61,14 +61,14 @@ export function getEnrolledUserTemplate({
         <p><strong>💡 Pro Tip:</strong> While you wait, you can explore our other courses or visit our blog for learning tips!</p>
       </div>
 
-      <p>We're looking forward to having you as part of the Risemai community!</p>
+      <p>We're looking forward to having you as part of the InsightEdu community!</p>
 
-      <p>Best regards,<br>The Risemai Team</p>
+      <p>Best regards,<br>The InsightEdu Team</p>
     </div>
 
     <div class="footer">
-      <p>This email was sent to you because you requested enrollment at Risemai</p>
-      <p>&copy; 2025 Risemai. All rights reserved.</p>
+      <p>This email was sent to you because you requested enrollment at InsightEdu</p>
+      <p>&copy; 2025 InsightEdu. All rights reserved.</p>
     </div>
   </div>
 </body>

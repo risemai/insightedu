@@ -31,7 +31,7 @@ export function PublicNavbar() {
             src='/insight-edu-logo.png'
             width={150}
             height={47}
-            alt='Risemai Logo'
+            alt='InsightEdu Logo'
           />
         </Link>
         <div className='hidden md:block'>

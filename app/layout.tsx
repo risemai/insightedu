@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud',
     images: [
       {
-        url: process.env.NEXT_PUBLIC_BASE_URL + '/risemai-og.jpg',
+        url: process.env.NEXT_PUBLIC_BASE_URL + '/insight-edu-og.jpg',
         width: 1200,
         height: 630,
         alt: 'InsightEdu — Learn, Grow, Succeed',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: 'InsightEdu — Learn, Grow, Succeed',
     description:
       'Research institute of sustainable economic, medical & agricultural innovation.',
-    images: [process.env.NEXT_PUBLIC_BASE_URL + '/insightedu-og.jpg'],
+    images: [process.env.NEXT_PUBLIC_BASE_URL + '/insight-edu-og.jpg'],
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud'

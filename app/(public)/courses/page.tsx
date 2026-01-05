@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       {
         url:
           (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') +
-          '/risemai-og.jpg',
+          '/insight-edu-og.jpg',
         width: 1200,
         height: 630,
         alt: 'InsightEdu Courses',

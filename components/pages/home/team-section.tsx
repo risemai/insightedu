@@ -72,11 +72,11 @@ export function TeamSection() {
                     <h3 className='text-xl font-black text-slate-900 group-hover:text-blue-600 transition-colors'>
                       {member.name}
                     </h3>
-                    <p className='text-blue-600 text-xs font-bold uppercase tracking-widest mt-1 mb-2'>
+                    {/* <p className='text-blue-600 text-xs font-bold uppercase tracking-widest mt-1 mb-2'>
                       {member.role}
-                    </p>
+                    </p> */}
                     <p className='text-slate-400 text-sm font-medium'>
-                      RISEMAI
+                      InsightEdu
                     </p>
                   </div>
                 </div>

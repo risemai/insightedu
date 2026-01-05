@@ -61,7 +61,7 @@ export async function sendEnrollmentEmails({
     const userMailOptions = {
       from: process.env.GMAIL_USER,
       to: userEmail,
-      subject: 'Enrollment Request Received - Risemai',
+      subject: 'Enrollment Request Received - InsightEdu',
       html: getEnrolledUserTemplate({
         userName,
         courseTitle,

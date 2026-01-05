@@ -4,7 +4,7 @@ export function WhyChooseUs() {
       <div className='container mx-auto px-4'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-black text-slate-900 mb-4'>
-            Why Choose Risemai?
+            Why Choose InsightEdu?
           </h2>
           <p className='text-slate-500 max-w-2xl mx-auto font-medium text-lg'>
             Bangladesh&apos;s premier research consultancy with proven track

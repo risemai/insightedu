@@ -63,8 +63,8 @@ export function getEnrollToAdminTemplate({
     </div>
 
     <div class="footer">
-      <p>This email was sent from Risemai enrollment system</p>
-      <p>&copy; 2025 Risemai. All rights reserved.</p>
+      <p>This email was sent from InsightEdu enrollment system</p>
+      <p>&copy; 2025 InsightEdu. All rights reserved.</p>
     </div>
   </div>
 </body>

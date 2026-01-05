@@ -42,7 +42,7 @@ export function PublicFooter() {
                 src='/insight-edu-logo.png'
                 width={150}
                 height={47}
-                alt='Risemai Logo'
+                alt='InsightEdu Logo'
               />
             </Link>
             <p className='text-slate-500 font-medium mb-8 leading-relaxed'>
@@ -187,7 +187,7 @@ export function PublicFooter() {
 
         <div className='pt-10 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-6'>
           <p className='text-sm font-bold'>
-            © {new Date().getFullYear()} Risemai. All rights reserved.
+            © {new Date().getFullYear()} InsightEdu. All rights reserved.
           </p>
           <div className='flex space-x-8 text-sm font-bold uppercase tracking-widest'>
             <a href='#' className='hover:text-blue-500'>
