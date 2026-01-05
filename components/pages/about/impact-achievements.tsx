@@ -15,12 +15,12 @@ export function ImpactAchievements() {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16'>
           {[
             {
-              number: '2,500+',
+              number: '1200+',
               label: 'Research Papers Published',
               icon: '📄',
             },
             {
-              number: '1,800+',
+              number: '700+',
               label: 'Researchers Assisted',
               icon: '👨‍🔬',
             },

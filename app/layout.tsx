@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     title: 'Risemai — Learn, Grow, Succeed',
     description:
       'Research institute of sustainable economic, medical & agricultural innovation.',
-    url: 'https://insightedu.cloud',
+    url: process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud',
     images: [
       {
-        url: 'https://insightedu.cloud/assets/img/og.jpg',
+        url: process.env.NEXT_PUBLIC_BASE_URL + '/risemai-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Risemai — Learn, Grow, Succeed',
@@ -51,22 +51,24 @@ export const metadata: Metadata = {
     title: 'Risemai — Learn, Grow, Succeed',
     description:
       'Research institute of sustainable economic, medical & agricultural innovation.',
-    images: ['https://insightedu.cloud/assets/img/og.jpg'],
+    images: [process.env.NEXT_PUBLIC_BASE_URL + '/risemai-og.jpg'],
   },
-  metadataBase: new URL('https://insightedu.cloud'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud'
+  ),
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Risemai',
-  url: 'https://insightedu.cloud',
+  url: process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud',
   publisher: {
     '@type': 'Organization',
     name: 'Risemai',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://insightedu.cloud/risemai-logo.svg',
+      url: process.env.NEXT_PUBLIC_BASE_URL + '/rise-mai-logo-01.png',
     },
   },
   sameAs: [
@@ -78,19 +80,19 @@ const jsonLd = {
   hasPart: [
     {
       '@type': 'WebPage',
-      url: 'https://insightedu.cloud/courses',
+      url: process.env.NEXT_PUBLIC_BASE_URL + '/courses',
       name: 'Courses',
       position: 1,
     },
     {
       '@type': 'WebPage',
-      url: 'https://insightedu.cloud/about',
+      url: process.env.NEXT_PUBLIC_BASE_URL + '/about',
       name: 'About',
       position: 2,
     },
     {
       '@type': 'WebPage',
-      url: 'https://insightedu.cloud/contact',
+      url: process.env.NEXT_PUBLIC_BASE_URL + '/contact',
       name: 'Contact',
       position: 3,
     },

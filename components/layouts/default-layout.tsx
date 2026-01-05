@@ -17,7 +17,7 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <PublicNavbar />
-      <main className='mt-13'>{children}</main>
+      <main className='mt-16'>{children}</main>
       <PublicFooter />
       <Toaster position='top-center' richColors />
       <WhatsappButton />

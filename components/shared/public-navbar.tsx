@@ -18,12 +18,8 @@ export function PublicNavbar() {
 
   const menuItems = [
     { label: 'About Us', href: '/about' },
-    {
-      label: 'Courses',
-      href: '/courses',
-    },
     { label: 'Research', href: '/research' },
-    { label: 'Publications', href: '/publications' },
+    { label: 'Services', href: '/services' },
     { label: 'Contact Us', href: '/contact' },
   ];
 

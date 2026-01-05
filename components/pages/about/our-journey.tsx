@@ -37,13 +37,13 @@ export function OurJourney() {
             </p>
             <div className='grid grid-cols-2 gap-8'>
               <div>
-                <h4 className='text-4xl font-black text-blue-600 mb-2'>2024</h4>
+                <h4 className='text-4xl font-black text-blue-600 mb-2'>2021</h4>
                 <p className='text-slate-400 font-bold uppercase text-xs tracking-widest'>
                   Year Established
                 </p>
               </div>
               <div>
-                <h4 className='text-4xl font-black text-blue-600 mb-2'>50K+</h4>
+                <h4 className='text-4xl font-black text-blue-600 mb-2'>2K+</h4>
                 <p className='text-slate-400 font-bold uppercase text-xs tracking-widest'>
                   Global Students
                 </p>

@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { contactEmail } from '@/server/contact';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
 import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -129,12 +130,12 @@ export function ContactContent() {
                     <p className='text-slate-500 font-medium mb-1'>
                       Send us a message anytime.
                     </p>
-                    <a
-                      href='mailto:info@pathfinder.com'
+                    <Link
+                      href='mailto:info.insightedu.bd@gmail.com'
                       className='text-blue-600 font-bold hover:underline'
                     >
-                      info@pathfinder.com
-                    </a>
+                      info.insightedu.bd@gmail.com
+                    </Link>
                   </div>
                 </div>
 
@@ -165,12 +166,12 @@ export function ContactContent() {
                     <p className='text-slate-500 font-medium mb-1'>
                       Call us Mon-Fri (9am - 6pm).
                     </p>
-                    <a
+                    <Link
                       href='tel:+880123456789'
                       className='text-blue-600 font-bold hover:underline'
                     >
-                      +880 1234-567890
-                    </a>
+                      +8801635282882
+                    </Link>
                   </div>
                 </div>
 
@@ -195,14 +196,14 @@ export function ContactContent() {
                     <p className='text-slate-500 font-medium mb-1'>
                       Chat directly for quick queries.
                     </p>
-                    <a
-                      href='https://wa.me/880123456789'
+                    <Link
+                      href='https://wa.me/+8801635282882?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='text-blue-600 font-bold hover:underline'
                     >
                       Message us on WhatsApp
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

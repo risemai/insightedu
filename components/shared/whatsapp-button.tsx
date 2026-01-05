@@ -6,6 +6,8 @@ export function WhatsappButton() {
     <Link
       href={`https://wa.me/+8801635282882?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.`}
       className='fixed bottom-5 right-5 z-50 cursor-pointer animate-bounce'
+      target='_blank'
+      rel='noopener noreferrer'
     >
       <Image
         width={56}
