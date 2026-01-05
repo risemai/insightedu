@@ -26,8 +26,8 @@ export const structure: StructureResolver = (S) =>
                 .title('Terms & Conditions')
                 .child(
                   S.document()
-                    .schemaType('termsConditions')
-                    .documentId('termsConditions')
+                    .schemaType('termsOfConditions')
+                    .documentId('termsOfConditions')
                 ),
 
               S.listItem()

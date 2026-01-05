@@ -3,9 +3,9 @@ import { courseType } from './courseType';
 import { mentorType } from './mentorType';
 import { successStory } from './successStory';
 import { privacyPolicy } from './privacyPolicy';
-import { termsConditions } from './termsConditions';
 import { supportCenter } from './supportCenter';
 import { faqType } from './faqType';
+import { termsOfConditions } from './termsOfConditions';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -13,7 +13,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     mentorType,
     successStory,
     privacyPolicy,
-    termsConditions,
+    termsOfConditions,
     supportCenter,
     faqType,
   ],

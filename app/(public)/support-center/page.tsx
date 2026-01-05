@@ -1,3 +1,7 @@
+import { SupportCenterContent } from '@/components/pages/site-pages';
+
+export const revalidate = 3600;
+
 export default function SupportCenterPage() {
-  return <div>Support Center Page</div>;
+  return <SupportCenterContent />;
 }

@@ -7,6 +7,7 @@ import { Loading } from './loading';
 import { Modal } from './modal';
 import { AlertModal } from './alert-modal';
 import { WhatsappButton } from './whatsapp-button';
+import { PortableTextComponent } from './portable-text';
 
 export {
   PublicNavbar,
@@ -18,4 +19,5 @@ export {
   Modal,
   AlertModal,
   WhatsappButton,
+  PortableTextComponent,
 };

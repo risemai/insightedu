@@ -5,6 +5,11 @@ import {
 } from '@/hooks/courses';
 import { useSuccessStories } from '@/hooks/successStories';
 import { useMentors } from '@/hooks/mentor';
+import {
+  usePrivacyPolicy,
+  useTermOfConditions,
+  useSupportCenter,
+} from '@/hooks/site-pages';
 
 export {
   useCoursesBySlug,
@@ -12,4 +17,7 @@ export {
   useCourses,
   useSuccessStories,
   useMentors,
+  usePrivacyPolicy,
+  useTermOfConditions,
+  useSupportCenter,
 };

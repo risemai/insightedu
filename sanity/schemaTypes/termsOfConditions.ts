@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
-export const termsConditions = defineType({
-  name: 'termsConditions',
-  title: 'Terms & Conditions',
+export const termsOfConditions = defineType({
+  name: 'termsOfConditions',
+  title: 'Terms of Conditions',
   type: 'document',
 
   fields: [
