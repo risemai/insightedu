@@ -17,7 +17,7 @@ export function PrimaryLogo({
   return (
     <Link href='/'>
       <Image
-        src='/rise-mai-logo-01.png'
+        src='/insight-edu-logo.png'
         width={width}
         height={height}
         alt='Risemai Logo'

@@ -39,7 +39,7 @@ export function PublicFooter() {
           <div className='col-span-1 lg:col-span-1'>
             <Link href='/'>
               <Image
-                src='/rise-mai-logo-01.png'
+                src='/insight-edu-logo.png'
                 width={150}
                 height={47}
                 alt='Risemai Logo'

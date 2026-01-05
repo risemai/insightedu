@@ -24,11 +24,11 @@ export function PublicNavbar() {
   ];
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 py-1.5'>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100'>
       <div className='container mx-auto py-2 flex items-center justify-between md:px-0 px-3'>
         <Link href='/'>
           <Image
-            src='/rise-mai-logo-01.png'
+            src='/insight-edu-logo.png'
             width={150}
             height={47}
             alt='Risemai Logo'

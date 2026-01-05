@@ -2,20 +2,24 @@ import type { Metadata } from 'next';
 import { AboutContent } from '@/components/pages/about';
 
 export const metadata: Metadata = {
-  title: 'About Us | Risemai',
+  title: 'About Us | InsightEdu',
   description:
-    'Learn about Risemai, a research institute dedicated to sustainable economic, medical, and agricultural innovation.',
+    'Learn about InsightEdu, a research institute dedicated to sustainable economic, medical, and agricultural innovation.',
   openGraph: {
-    title: 'About Us | Risemai',
+    title: 'About Us | InsightEdu',
     description:
-      'Learn about Risemai, a research institute dedicated to sustainable economic, medical, and agricultural innovation.',
-    url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') + '/about',
+      'Learn about InsightEdu, a research institute dedicated to sustainable economic, medical, and agricultural innovation.',
+    url:
+      (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') +
+      '/about',
     images: [
       {
-        url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') + '/risemai-og.jpg',
+        url:
+          (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') +
+          '/risemai-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'About Risemai',
+        alt: 'About InsightEdu',
       },
     ],
   },
@@ -24,16 +28,19 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
-  name: 'About Risemai',
+  name: 'About InsightEdu',
   description:
-    'Learn about Risemai, a research institute dedicated to sustainable economic, medical, and agricultural innovation.',
-  url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') + '/about',
+    'Learn about InsightEdu, a research institute dedicated to sustainable economic, medical, and agricultural innovation.',
+  url:
+    (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') + '/about',
   publisher: {
     '@type': 'Organization',
-    name: 'Risemai',
+    name: 'InsightEdu',
     logo: {
       '@type': 'ImageObject',
-      url: (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') + '/rise-mai-logo-01.png',
+      url:
+        (process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud') +
+        '/insight-edu-logo.png',
     },
   },
 };

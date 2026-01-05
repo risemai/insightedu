@@ -10,12 +10,12 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Risemai — Learn, Grow, Succeed',
+  title: 'InsightEdu — Learn, Grow, Succeed',
   description:
     'Research institute of sustainable economic, medical & agricultural innovation.',
   keywords: [
-    'RiseMai',
-    'risemai',
+    'InsightEdu',
+    'insightedu',
     'online learning',
     'e-learning',
     'courses',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Risemai — Learn, Grow, Succeed',
+    title: 'InsightEdu — Learn, Grow, Succeed',
     description:
       'Research institute of sustainable economic, medical & agricultural innovation.',
     url: process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud',
@@ -41,17 +41,17 @@ export const metadata: Metadata = {
         url: process.env.NEXT_PUBLIC_BASE_URL + '/risemai-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Risemai — Learn, Grow, Succeed',
+        alt: 'InsightEdu — Learn, Grow, Succeed',
       },
     ],
-    siteName: 'Risemai',
+    siteName: 'InsightEdu',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Risemai — Learn, Grow, Succeed',
+    title: 'InsightEdu — Learn, Grow, Succeed',
     description:
       'Research institute of sustainable economic, medical & agricultural innovation.',
-    images: [process.env.NEXT_PUBLIC_BASE_URL + '/risemai-og.jpg'],
+    images: [process.env.NEXT_PUBLIC_BASE_URL + '/insightedu-og.jpg'],
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud'
@@ -61,21 +61,21 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Risemai',
+  name: 'InsightEdu',
   url: process.env.NEXT_PUBLIC_BASE_URL || 'https://insightedu.cloud',
   publisher: {
     '@type': 'Organization',
-    name: 'Risemai',
+    name: 'InsightEdu',
     logo: {
       '@type': 'ImageObject',
-      url: process.env.NEXT_PUBLIC_BASE_URL + '/rise-mai-logo-01.png',
+      url: process.env.NEXT_PUBLIC_BASE_URL + '/insight-edu-logo.png',
     },
   },
   sameAs: [
     'https://www.facebook.com/insightedu',
     'https://twitter.com/insightedu',
-    'https://www.linkedin.com/company/risemai',
-    'https://github.com/risemai',
+    'https://www.linkedin.com/company/insightedu',
+    'https://github.com/insightedu',
   ],
   hasPart: [
     {
