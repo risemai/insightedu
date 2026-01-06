@@ -3,6 +3,7 @@ import { FaqSection } from './faq-section';
 import { HeroContent } from './hero';
 import { HowItWorks } from './how-it-works';
 import { MissionSection } from './mission-section';
+import { RecentProject } from './recent-project';
 import { ResearchAreas } from './research-areas';
 import { SuccessStories } from './success-stories';
 
@@ -14,6 +15,7 @@ export function HomeContent() {
       {/* <StatsSection /> */}
       <ResearchAreas />
       <HowItWorks />
+      <RecentProject />
       {/* <ExploreCourseCard /> */}
       {/* <TeamSection /> */}
       <SuccessStories />

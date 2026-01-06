@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function HeroContent() {
   return (
     <section className='pt-12 lg:pt-24 pb-6 lg:pb-10 px-4 bg-gray-50'>
@@ -24,9 +26,11 @@ export function HeroContent() {
               Empowering the next generation of researchers with world-class
               mentorship, professional tools, and a global academic community.
             </p>
-            <button className='bg-blue-500 text-white px-10 py-5 rounded-full font-extrabold text-lg hover:bg-blue-500 transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-blue-600/30'>
-              Explore More
-            </button>
+            <Link href='/about'>
+              <button className='cursor-pointer bg-blue-500 text-white px-10 py-5 rounded-full font-extrabold text-lg hover:bg-blue-500 transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-blue-600/30'>
+                Explore More
+              </button>
+            </Link>
           </div>
 
           {/* Abstract Shapes */}

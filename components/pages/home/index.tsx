@@ -9,6 +9,7 @@ import { MissionSection } from './mission-section';
 import { ResearchAreas } from './research-areas';
 import { HowItWorks } from './how-it-works';
 import { FaqSection } from './faq-section';
+import { RecentProject } from './recent-project';
 
 export {
   HeroContent,
@@ -22,4 +23,5 @@ export {
   ResearchAreas,
   HowItWorks,
   FaqSection,
+  RecentProject,
 };
