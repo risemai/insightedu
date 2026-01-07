@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { ResearchPageContent } from '@/components/pages/research';
 
-export const revalidate = 3600;
+export const revalidate = 1800;
 
 export const metadata: Metadata = {
   title: 'Research | InsightEdu',

@@ -10,6 +10,7 @@ import {
   useTermOfConditions,
   useSupportCenter,
 } from '@/hooks/site-pages';
+import { useSpecializations } from '@/hooks/specializations';
 
 export {
   useCoursesBySlug,
@@ -20,4 +21,5 @@ export {
   usePrivacyPolicy,
   useTermOfConditions,
   useSupportCenter,
+  useSpecializations,
 };

@@ -3,6 +3,7 @@ import type { successStoriesType } from './successStories.type';
 import type { MentorType } from './mentor.type';
 import type { SitePagesType } from './site-pages.types';
 import type { ResearchType } from './research.type';
+import type { SpecializationType } from './specializations.types';
 
 export {
   Course,
@@ -12,4 +13,5 @@ export {
   MentorType,
   SitePagesType,
   ResearchType,
+  SpecializationType,
 };
