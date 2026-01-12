@@ -19,7 +19,7 @@ export function useServices() {
     queryFn: async () => {
       return client.fetch(`
         *[_type == "service"]
-        | order(_createdAt desc) [0...3] {        
+        | order(_createdAt desc){        
             ${SERVICES},
         }
         `);
