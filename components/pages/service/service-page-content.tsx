@@ -1,87 +1,12 @@
+'use client';
+
+import { Loading } from '@/components/shared';
+import { useServices } from '@/hooks/services';
 import Link from 'next/link';
 
-const SERVICES = [
-  {
-    id: 1,
-    title: 'Journal Paper Publication',
-    description:
-      'Comprehensive support for high-impact journal publications across all tiers (Q1, Q2, Q3, Q4).',
-    icon: '📜',
-    features: [
-      'Impact Factor Targeting',
-      'Peer Review Simulation',
-      'Journal Selection',
-      'Citation Optimization',
-    ],
-  },
-  {
-    id: 2,
-    title: 'Thesis & Dissertation',
-    description:
-      'Expert guidance for undergraduate, masters, and PhD thesis development from proposal to final defense.',
-    icon: '🎓',
-    features: [
-      'Proposal Writing',
-      'Literature Review',
-      'Methodology Design',
-      'Data Interpretation',
-    ],
-  },
-  {
-    id: 3,
-    title: 'Conference Paper Support',
-    description:
-      'Assistance in preparing robust conference submissions for international academic events.',
-    icon: '🎤',
-    features: [
-      'Abstract Refinement',
-      'Poster Design',
-      'Presentation Deck Prep',
-      'Proceedings Formatting',
-    ],
-  },
-  {
-    id: 4,
-    title: 'Academic & Industrial Writing',
-    description:
-      'Professional writing services for technical reports, white papers, and corporate research documentation.',
-    icon: '✍️',
-    features: [
-      'Technical Accuracy',
-      'Industry Standards',
-      'Case Study Development',
-      'Executive Summaries',
-    ],
-  },
-  {
-    id: 5,
-    title: 'Proofreading & Editing',
-    description:
-      'Meticulous linguistic and structural refinement to ensure your work meets international academic standards.',
-    icon: '🔍',
-    features: [
-      'Grammar & Syntax',
-      'Academic Tone',
-      'Consistency Check',
-      'Plagiarism Reports',
-    ],
-  },
-  {
-    id: 6,
-    title: 'Publication Help & Consultancy',
-    description:
-      'End-to-end consultancy to navigate the complex landscape of international academic publishing.',
-    icon: '🏢',
-    features: [
-      'Submission Management',
-      'Reviewer Response Help',
-      'Open Access Strategy',
-      'Ethical Compliance',
-    ],
-  },
-];
-
 export function ServicePageContent() {
+  const { data, isLoading } = useServices();
+
   return (
     <div>
       <section className='bg-slate-900 py-24 relative overflow-hidden'>
@@ -105,55 +30,60 @@ export function ServicePageContent() {
       </section>
 
       <section className='py-24 bg-white relative -mt-12 rounded-t-[3rem] z-20 shadow-2xl'>
-        <div className='container mx-auto px-4'>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {SERVICES.map((service) => (
-              <div
-                key={service.id}
-                className='group bg-gray-50 p-10 rounded-[2.5rem] border border-transparent hover:border-blue-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full'
-              >
-                <div className='text-5xl mb-8 transform group-hover:scale-110 transition-transform duration-300'>
-                  {service.icon}
-                </div>
-                <h3 className='text-2xl font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors'>
-                  {service.title}
-                </h3>
-                <p className='text-slate-500 font-medium leading-relaxed mb-8 grow'>
-                  {service.description}
-                </p>
-                <ul className='space-y-3 mb-10'>
-                  {service.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className='flex items-center text-sm font-bold text-slate-700'
-                    >
-                      <svg
-                        className='w-4 h-4 text-blue-500 mr-2'
-                        fill='none'
-                        stroke='currentColor'
-                        viewBox='0 0 24 24'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth='3'
-                          d='M5 13l4 4L19 7'
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href='/contact'
-                  className='w-full text-center py-4 bg-slate-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all'
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div className='container mx-auto px-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+              {data?.map((service) => (
+                <div
+                  key={service._id}
+                  className='group bg-gray-50 p-10 rounded-[2.5rem] border border-transparent hover:border-blue-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full'
                 >
-                  Request Quote
-                </Link>
-              </div>
-            ))}
+                  <div className='text-5xl mb-8 transform group-hover:scale-110 transition-transform duration-300'>
+                    {service.icon}
+                  </div>
+                  <h3 className='text-2xl font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors'>
+                    {service.title}
+                  </h3>
+                  <p className='text-slate-500 font-medium leading-relaxed mb-8 grow'>
+                    {service.description}
+                  </p>
+                  <ul className='space-y-3 mb-10'>
+                    {service?.features &&
+                      service?.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className='flex items-center text-sm font-bold text-slate-700'
+                        >
+                          <svg
+                            className='w-4 h-4 text-blue-500 mr-2'
+                            fill='none'
+                            stroke='currentColor'
+                            viewBox='0 0 24 24'
+                          >
+                            <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth='3'
+                              d='M5 13l4 4L19 7'
+                            />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                  </ul>
+                  <Link
+                    href='/contact'
+                    className='w-full text-center py-4 bg-slate-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all'
+                  >
+                    Request Quote
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </section>
 
       <section className='py-24 bg-slate-50'>

@@ -8,6 +8,7 @@ import { faqType } from './faqType';
 import { termsOfConditions } from './termsOfConditions';
 import { researchType } from './researchType';
 import { specializationType } from './specializations';
+import { serviceType } from './services.type';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,5 +21,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     faqType,
     researchType,
     specializationType,
+    serviceType,
   ],
 };

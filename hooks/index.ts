@@ -11,6 +11,7 @@ import {
   useSupportCenter,
 } from '@/hooks/site-pages';
 import { useSpecializations } from '@/hooks/specializations';
+import { useServices } from '@/hooks/services';
 
 export {
   useCoursesBySlug,
@@ -22,4 +23,5 @@ export {
   useTermOfConditions,
   useSupportCenter,
   useSpecializations,
+  useServices,
 };
