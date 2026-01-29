@@ -9,13 +9,14 @@ const SERVICES = `
     title,
     description,
     icon,
+    color,
     features,
     _createdAt
 `;
 
 export function useServices() {
   return useQuery<ServiceType[]>({
-    queryKey: ['researchProjects'],
+    queryKey: ['services'],
     queryFn: async () => {
       return client.fetch(`
         *[_type == "service"]

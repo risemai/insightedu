@@ -9,21 +9,27 @@ import {
   NavigationMenuTrigger,
 } from '../ui/navigation-menu';
 
+type quickLinkType = {
+  label: string;
+  href: string;
+  subMenu?: { label: string; href: string }[];
+};
+
 const socialLinks = [
   { name: 'Facebook', href: '#', icon: '/assets/icon/facebook-icon.svg' },
   { name: 'LinkedIn', href: '#', icon: '/assets/icon/linkedin-icon.svg' },
 ];
 
-const quickLink = [
-  {
-    label: 'Courses',
-    href: '#',
-    subMenu: [
-      { label: 'Research Methodology', href: '#' },
-      { label: 'Academic Writing', href: '#' },
-      { label: 'Data Analysis', href: '#' },
-    ],
-  },
+const quickLink: quickLinkType[] = [
+  // {
+  //   label: 'Courses',
+  //   href: '#',
+  //   subMenu: [
+  //     { label: 'Research Methodology', href: '#' },
+  //     { label: 'Academic Writing', href: '#' },
+  //     { label: 'Data Analysis', href: '#' },
+  //   ],
+  // },
   { label: 'About Us', href: '/about' },
   { label: 'Research', href: '/research' },
   { label: 'Publications', href: '/publications' },
@@ -38,12 +44,14 @@ export function PublicFooter() {
           {/* Brand */}
           <div className='col-span-1 lg:col-span-1'>
             <Link href='/'>
-              <Image
-                src='/insight-edu-logo.png'
-                width={150}
-                height={47}
-                alt='InsightEdu Logo'
-              />
+              <div className='bg-white inline-block mb-2 rounded-xl'>
+                <Image
+                  src='/insight-edu-logo.png'
+                  width={150}
+                  height={47}
+                  alt='InsightEdu Logo'
+                />
+              </div>
             </Link>
             <p className='text-slate-500 font-medium mb-8 leading-relaxed'>
               Bangladesh’s Largest Online Learning and Research Skill

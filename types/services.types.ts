@@ -3,6 +3,7 @@ export type ServiceType = {
   title: string;
   description?: string;
   icon: string;
+  color: string;
   features?: string[];
   _createdAt: string;
 };

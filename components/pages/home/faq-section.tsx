@@ -24,7 +24,7 @@ export function FaqSection() {
           {isLoading ? (
             <p>Loading...</p>
           ) : (
-            <div className='mx-auto w-3/6'>
+            <div className='mx-auto w-full md:w-3/6'>
               <Accordion type='single' collapsible>
                 {faqData?.map((faq) => (
                   <AccordionItem
@@ -32,10 +32,10 @@ export function FaqSection() {
                     value={faq._id}
                     className='border-none'
                   >
-                    <AccordionTrigger className='text-lg font-semibold cursor-pointer p-5 my-2.5 rounded-xl bg-blue-100'>
+                    <AccordionTrigger className='text-base md:text-lg font-semibold cursor-pointer p-5 my-2.5 rounded-xl bg-blue-100'>
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className='p-4 text-lg text-gray-600'>
+                    <AccordionContent className='p-4 text-base md:text-lg text-gray-600'>
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

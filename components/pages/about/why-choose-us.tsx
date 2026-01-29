@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function WhyChooseUs() {
   return (
     <section className='py-24 bg-white'>
@@ -84,12 +86,12 @@ export function WhyChooseUs() {
               succeed.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-              <button className='px-8 py-4 bg-white text-slate-900 rounded-2xl font-black text-lg hover:bg-blue-50 transition-colors shadow-xl'>
+              <Link
+                href='/services'
+                className='px-8 py-4 bg-white text-slate-900 rounded-2xl font-black text-lg hover:bg-blue-50 transition-colors shadow-xl'
+              >
                 Get Publication Support
-              </button>
-              <button className='px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-black text-lg hover:bg-white/10 transition-colors'>
-                Browse Courses
-              </button>
+              </Link>
             </div>
           </div>
         </div>

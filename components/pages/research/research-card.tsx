@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export function ResearchCard({ data }: { data: ResearchType }) {
   const { title, description, image, link } = data;
+
   return (
     <div className='group bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col'>
       <div className='relative h-64 overflow-hidden'>

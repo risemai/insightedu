@@ -22,12 +22,6 @@ export function StartResearchJourney() {
         </p>
         <div className='flex flex-col sm:flex-row justify-center gap-4'>
           <Link
-            href='/courses'
-            className='bg-white text-blue-600 px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl transition-all'
-          >
-            Browse Courses
-          </Link>
-          <Link
             href='/contact'
             className='bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-800 transition-all'
           >

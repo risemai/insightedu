@@ -2,6 +2,8 @@
 
 import { Loading } from '@/components/shared';
 import { useServices } from '@/hooks/services';
+import { colorMap } from '@/lib/utils';
+import * as Icons from 'lucide-react';
 import Link from 'next/link';
 
 export function ServicePageContent() {
@@ -35,52 +37,67 @@ export function ServicePageContent() {
         ) : (
           <div className='container mx-auto px-4'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-              {data?.map((service) => (
-                <div
-                  key={service._id}
-                  className='group bg-gray-50 p-10 rounded-[2.5rem] border border-transparent hover:border-blue-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full'
-                >
-                  <div className='text-5xl mb-8 transform group-hover:scale-110 transition-transform duration-300'>
-                    {service.icon}
-                  </div>
-                  <h3 className='text-2xl font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors'>
-                    {service.title}
-                  </h3>
-                  <p className='text-slate-500 font-medium leading-relaxed mb-8 grow'>
-                    {service.description}
-                  </p>
-                  <ul className='space-y-3 mb-10'>
-                    {service?.features &&
-                      service?.features.map((feature, idx) => (
-                        <li
-                          key={idx}
-                          className='flex items-center text-sm font-bold text-slate-700'
-                        >
-                          <svg
-                            className='w-4 h-4 text-blue-500 mr-2'
-                            fill='none'
-                            stroke='currentColor'
-                            viewBox='0 0 24 24'
-                          >
-                            <path
-                              strokeLinecap='round'
-                              strokeLinejoin='round'
-                              strokeWidth='3'
-                              d='M5 13l4 4L19 7'
-                            />
-                          </svg>
-                          {feature}
-                        </li>
-                      ))}
-                  </ul>
-                  <Link
-                    href='/contact'
-                    className='w-full text-center py-4 bg-slate-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all'
+              {data?.map((service) => {
+                const iconKey = service.icon?.trim();
+                const colors =
+                  colorMap[service.color?.toLowerCase()] || colorMap.blue;
+
+                const LucideIcon = ((iconKey &&
+                  Icons[iconKey as keyof typeof Icons]) ??
+                  Icons.HelpCircle) as React.ElementType;
+                return (
+                  <div
+                    key={service._id}
+                    className='relative group bg-gray-50 p-10 rounded-[2.5rem] border border-transparent hover:border-blue-100 hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col h-full'
                   >
-                    Request Quote
-                  </Link>
-                </div>
-              ))}
+                    <div
+                      className='absolute top-0 right-0 w-24 h-24 rounded-bl-[100%] rounded-tr-[2.5rem] z-0 transition-all duration-300'
+                      style={{
+                        backgroundColor: colors.light,
+                      }}
+                    ></div>
+                    <div className='text-5xl mb-8 transform group-hover:scale-110 transition-transform duration-300 inline-block'>
+                      <LucideIcon size={40} style={{ color: colors.main }} />
+                    </div>
+                    <h3 className='text-2xl font-black text-slate-900 mb-4 group-hover:text-blue-600 transition-colors'>
+                      {service.title}
+                    </h3>
+                    <p className='text-slate-500 font-medium leading-relaxed mb-8 grow'>
+                      {service.description}
+                    </p>
+                    <ul className='space-y-3 mb-10'>
+                      {service?.features &&
+                        service?.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className='flex items-center text-sm font-bold text-slate-700'
+                          >
+                            <svg
+                              className='w-4 h-4 text-blue-500 mr-2'
+                              fill='none'
+                              stroke='currentColor'
+                              viewBox='0 0 24 24'
+                            >
+                              <path
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                                strokeWidth='3'
+                                d='M5 13l4 4L19 7'
+                              />
+                            </svg>
+                            {feature}
+                          </li>
+                        ))}
+                    </ul>
+                    <Link
+                      href='/contact'
+                      className='w-full text-center py-4 bg-slate-900 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-600 transition-all'
+                    >
+                      Request Quote
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
